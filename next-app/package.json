@@ -11,9 +11,11 @@
     "docker-build": "next build && docker build -t jahskee/nextapp .",
     "docker-run": "yarn docker-build && docker rm -f nextapp && docker run --name nextapp -p 0.0.0.0:3001:3001 jahskee/nextapp",
     "docker-push": "yarn init-script && bin/docker-push.sh",
-    "lint" : "./node_modules/.bin/eslint --fix 'src/**/*.jsx' "
+    "lint": "./node_modules/.bin/eslint --fix 'src/**/*.jsx' "
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.1",
+    "@material-ui/styles": "^4.11.4",
     "next": "^10.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1"
