@@ -1,6 +1,6 @@
 import React from 'react';
 import { ApolloProvider } from '@apollo/client';
-import T, { any } from 'prop-types';
+import T from 'prop-types';
 import client from './apollo-client';
 
 // pages/_app.js
