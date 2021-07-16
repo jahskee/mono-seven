@@ -3,9 +3,9 @@ import Document, {
   Html, Head, Main, NextScript,
 } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/styles';
-import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
+import { createTheme, responsiveFontSizes } from '@material-ui/core/styles';
 
-const theme = responsiveFontSizes(createMuiTheme());
+const theme = responsiveFontSizes(createTheme());
 
 class MyDocument extends Document {
   render() {
@@ -57,6 +57,7 @@ MyDocument.getInitialProps = async (ctx) => {
   const originalRenderPage = ctx.renderPage;
 
   ctx.renderPage = () => originalRenderPage({
+    // eslint-disable-next-line react/jsx-props-no-spreading
     enhanceApp: (App) => (props) => sheets.collect(<App {...props} />),
   });
 
