@@ -1,0 +1,28 @@
+{
+  "name": "learn-starter",
+  "version": "0.1.35",
+  "private": true,
+  "scripts": {
+    "init-script": "chmod 775 bin/*",
+    "bump-version": "npm version patch --force  && bin/bump-version.sh",
+    "dev": "next dev -p $NEXTAPP_PORT",
+    "build": "next build",
+    "start": "next build && next start",
+    "docker-build": "next build && docker build -t jahskee/nextapp .",
+    "docker-run": "yarn docker-build && docker rm -f nextapp && docker run --name nextapp -p 0.0.0.0:3001:3001 jahskee/nextapp",
+    "docker-push": "yarn init-script && bin/docker-push.sh",
+    "lint" : "./node_modules/.bin/eslint --fix 'src/**/*.jsx' "
+  },
+  "dependencies": {
+    "next": "^10.0.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.24.0"
+  }
+}
