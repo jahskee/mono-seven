@@ -3,8 +3,6 @@ import { ApolloProvider } from '@apollo/client';
 import T from 'prop-types';
 import client from './apollo-client';
 
-// pages/_app.js
-
 function MyApp({ Component, pageProps }) {
   return (
     <ApolloProvider client={client}>
