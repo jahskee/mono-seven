@@ -5,7 +5,7 @@
   "scripts": {
     "init-script": "chmod 775 bin/*",
     "bump-version": "npm version patch --force  && bin/bump-version.sh",
-    "dev": "next dev -p $NEXTAPP_PORT",
+    "dev": "next dev -p 3001",
     "build": "next build",
     "start": "next build && next start",
     "docker-build": "next build && docker build -t jahskee/nextapp .",
