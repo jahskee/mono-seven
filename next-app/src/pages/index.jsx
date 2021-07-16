@@ -6,11 +6,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import Image from 'next/image';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -35,14 +30,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
   },
-  overlay: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    right: 0,
-    left: 0,
-    backgroundColor: 'rgba(0,0,0,.7)',
-  },
   mainFeaturedPostContent: {
     position: 'relative',
     padding: theme.spacing(3),
@@ -52,35 +39,11 @@ const useStyles = makeStyles((theme) => ({
       paddingBottom: theme.spacing(10),
     },
   },
-  card: {
-    display: 'flex',
-  },
-  cardDetails: {
-    flex: 1,
-  },
-  cardMedia: {
-    width: 160,
-  },
   logo: {
     display: 'absolute',
     top: -210,
   },
 }));
-
-const featuredPosts = [
-  {
-    title: 'Featured post',
-    date: 'Nov 12',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-  },
-  {
-    title: 'Post title',
-    date: 'Nov 11',
-    description:
-      'This is a wider card with supporting text below as a natural lead-in to additional content.',
-  },
-];
 
 function Blog() {
   const classes = useStyles();
@@ -118,7 +81,6 @@ function Blog() {
             </Grid>
           </Paper>
           {/* End main featured post */}
-
         </main>
       </Container>
     </>
