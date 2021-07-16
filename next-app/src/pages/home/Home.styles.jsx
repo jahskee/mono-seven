@@ -27,7 +27,10 @@ const useStyles = makeStyles((theme) => ({
 
   },
   mainFeaturedPostContent: {
-    padding: theme.spacing(2),
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    padding: theme.spacing(1),
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(2),
       paddingRight: 0,
