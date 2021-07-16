@@ -12,7 +12,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
-import Button from '@material-ui/core/Button';
 import Image from 'next/image';
 import MenuIcon from '@material-ui/icons/Menu';
 import Container from '@material-ui/core/Container';
@@ -50,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       padding: theme.spacing(2),
       paddingRight: 0,
+      paddingBottom: theme.spacing(10),
     },
   },
   card: {
@@ -97,7 +97,6 @@ function Blog() {
             <Typography variant="h6" className={classes.title}>
               Home
             </Typography>
-            <Button color="inherit">Login</Button>
           </Toolbar>
         </AppBar>
         <main>
@@ -119,41 +118,7 @@ function Blog() {
             </Grid>
           </Paper>
           {/* End main featured post */}
-          {/* Sub featured posts */}
-          <Grid container spacing={4}>
-            {featuredPosts.map((post) => (
-              <Grid item key={post.title} xs={12} md={6}>
-                <CardActionArea component="a" href="#">
-                  <Card className={classes.card}>
-                    <div className={classes.cardDetails}>
-                      <CardContent>
-                        <Typography component="h2" variant="h5">
-                          {post.title}
-                        </Typography>
-                        <Typography variant="subtitle1" color="textSecondary">
-                          {post.date}
-                        </Typography>
-                        <Typography variant="subtitle1" paragraph>
-                          {post.description}
-                        </Typography>
-                        <Typography variant="subtitle1" color="primary">
-                          Continue reading...
-                        </Typography>
-                      </CardContent>
-                    </div>
-                    <Hidden xsDown>
-                      <CardMedia
-                        className={classes.cardMedia}
-                        image="https://source.unsplash.com/random"
-                        title="Image title"
-                      />
-                    </Hidden>
-                  </Card>
-                </CardActionArea>
-              </Grid>
-            ))}
-          </Grid>
-          {/* End sub featured posts */}
+
         </main>
       </Container>
     </>
