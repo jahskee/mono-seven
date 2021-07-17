@@ -1,19 +1,16 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Toolbar from '@material-ui/core/Toolbar';
-import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import Container from '@material-ui/core/Container';
 import { gql, useLazyQuery } from '@apollo/client';
 import logo from '../../assets/images/7eleven.png';
 import useStyles from './Home.styles';
 import Pokemon from './Pokemon';
 import { Button } from '@material-ui/core';
+import MyAppBar from '../../storybook/custom/appbar/MyAppBar';
 
 import useReactiveVars from '../../appState';
 
@@ -82,16 +79,7 @@ function Home() {
     <Box>
       <CssBaseline />
       <Container maxWidth="lg" className={classes.container}>
-        <AppBar position="static">
-          <Toolbar className={classes.toolbar}>
-            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" className={classes.title}>
-              Home
-            </Typography>
-          </Toolbar>
-        </AppBar>
+       <MyAppBar />
         <main>
           {/* Main featured post */}
           <Paper className={classes.mainFeaturedPost}>

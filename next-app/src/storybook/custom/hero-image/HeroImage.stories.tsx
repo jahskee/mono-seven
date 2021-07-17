@@ -1,9 +1,9 @@
 import React from 'react';
-import MyAppBar from './MyAppBar';
+import HeroImage from './HeroImage';
 
 export default {
-  title: '7Eleven/MyAppBar',
-  component: MyAppBar,
+  title: '7Eleven/HeroImage',
+  component: HeroImage,
   args: {  // default values
   
   },
@@ -11,6 +11,6 @@ export default {
   },
 };
 
-const Template = (args) => (<MyAppBar {...args} />);
+const Template = (args) => (<HeroImage {...args} />);
 export const Default = Template.bind({});
 Default.args = {}
