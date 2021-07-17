@@ -16,7 +16,4 @@ export default {
 
 const Template = (args) => (<MyAppBar {...args} />);
 export const Default = Template.bind({});
-Default.args = {
- 
-  onClick: action('Default button clicked'),
-}
+Default.args = {}
