@@ -13,7 +13,7 @@ import { gql, useLazyQuery } from '@apollo/client';
 import { Button } from '@material-ui/core';
 import logo from '../../assets/images/7eleven.png';
 import useStyles from './Home.styles';
-import Organization from './Organization';
+import Pokemon from './Pokemon';
 
 import useReactiveVars from '../../appState';
 
@@ -25,9 +25,9 @@ const getRecEnd = (recStart, total, recordPerPage) => {
   return recEnd;
 };
 
-const ALL_ORGANIZATION_IDS = gql`
-  query allOrganizations {
-    allOrganizations {
+const ALL_POKEMON_IDS = gql`
+  query allPokemons {
+    allPokemons {
       id
     }
   }
@@ -36,34 +36,34 @@ const ALL_ORGANIZATION_IDS = gql`
 function Home() {
   const classes = useStyles();
 
-  const { usePage, useOrgList, useRecordPerPage } = useReactiveVars();
+  const { usePage, usePokemonList, useRecordPerPage } = useReactiveVars();
   const { page, setPage } = usePage();
-  const { orgList, setOrgList } = useOrgList();
+  const { pokemonList, setPokemonList } = usePokemonList();
   const { recordPerPage } = useRecordPerPage();
 
-  const [getOrgIds, { loading, error, data }] = useLazyQuery(
-    ALL_ORGANIZATION_IDS,
+  const [getPokemonIds, { loading, error, data }] = useLazyQuery(
+    ALL_POKEMON_IDS,
   );
 
   if (loading) return <div>Loading...</div>;
   if (error) return `Error! ${error}`;
 
-  if (orgList.length === 0) {
-    getOrgIds();
+  if (pokemonList.length === 0) {
+    getPokemonIds();
     if (data) {
       let pageCt = 0;
-      const pagedOrgList = data.allOrganizations.map((item, index) => {
+      const pagedPokemonList = data.allPokemons.map((item, index) => {
         const modulo = index % recordPerPage;
         if (modulo === 0 && index !== 0) {
           pageCt += 1;
         }
         return { id: item.id, page: pageCt };
       });
-      setOrgList(pagedOrgList);
+      setPokemonList(pagedPokemonList);
     }
   }
 
-  const totalRecs = orgList.length;
+  const totalRecs = pokemonList.length;
   const totalPages = parseInt(totalRecs / recordPerPage, 10);
   const recStart = getRecStart(page, recordPerPage);
   const recEnd = getRecEnd(recStart, totalRecs, recordPerPage);
@@ -128,12 +128,12 @@ function Home() {
               {' '}
               {totalRecs}
             </p>
-            {orgList
-        && orgList
+            {pokemonList
+        && pokemonList
           .filter((item) => item.page === page)
           .map((item) => (
             <div key={item.id}>
-              <Organization id={item.id} />
+              <Pokemon id={item.id} />
             </div>
           ))}
           </div>
