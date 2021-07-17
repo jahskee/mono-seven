@@ -1,24 +1,26 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Button from '@material-ui/core/Button';
+import { Button } from '@material-ui/core';
 import { action } from '@storybook/addon-actions';
 
 export default {
   title: 'Material-UI/Button',
   component: Button,
-  args: {  // default values
-    color: {
-      defaultValue: 'primary',
-    },
-  },
   argTypes: {
     color: {
+      defaultValue: 'primary',
       options: ['default', 'primary', 'secondary'],
       control: { type: 'radio' },
     },
     variant: {
+      defaultValue: 'contained',
       options: ['contained', 'outlined', 'text'],
       control: { type: 'radio'},
+    },
+    fullWidth: {
+      defaultValue: false,
+      options: [ true, false],
+      control: { type: 'radio' },
+      description: "dfsd",
     },
     onClick: {
       control: { type: 'function'}

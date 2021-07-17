@@ -13,7 +13,7 @@ import { gql, useLazyQuery } from '@apollo/client';
 import logo from '../../assets/images/7eleven.png';
 import useStyles from './Home.styles';
 import Pokemon from './Pokemon';
-import Button from '../../storybook/components/Button'
+import { Button } from '@material-ui/core';
 
 import useReactiveVars from '../../appState';
 
