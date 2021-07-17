@@ -2,7 +2,6 @@ import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import { gql, useLazyQuery } from '@apollo/client';
@@ -11,7 +10,6 @@ import useStyles from './Home.styles';
 import Pokemon from './Pokemon';
 import { Button } from '@material-ui/core';
 import MyAppBar from '../../storybook/custom/appbar/MyAppBar';
-
 import useReactiveVars from '../../appState';
 
 const getRecStart = (page, recordPerPage) => page * recordPerPage;
