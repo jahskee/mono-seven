@@ -5,9 +5,8 @@ import Container from '@material-ui/core/Container';
 import { gql, useLazyQuery } from '@apollo/client';
 import useStyles from './Home.styles';
 import Pokemon from './Pokemon';
-import { Button } from '@material-ui/core';
-import MyAppBar from '../../storybook/custom/appbar/MyAppBar';
-import HeroImage from '../../storybook/custom/hero-image/HeroImage';
+import MyAppBar from '../../storybook/components/appbar/AppBar7';
+import HeroImage from '../../storybook/components/hero-image/HeroImage';
 
 import useReactiveVars from '../../appState';
 
