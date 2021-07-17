@@ -7,6 +7,8 @@ const useStyles = makeStyles((theme) => ({
       margin: 0,
       backgroundColor: theme.palette.primary,
     },
+    marginTop: theme.spacing(0.2),
+    marginBottom: theme.spacing(40),
   },
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,

@@ -114,7 +114,6 @@ function Home() {
 
           <div>
             <h2>Paginate</h2>
-            <Button color="primary">Hello</Button>
             <p>
               <button type="button" onClick={handlePrevPage}>{'<'}</button>
               {' '}

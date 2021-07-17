@@ -11,7 +11,9 @@
     "docker-build": "next build && docker build -t jahskee/nextapp .",
     "docker-run": "yarn docker-build && docker rm -f nextapp && docker run --name nextapp -p 0.0.0.0:3001:3001 jahskee/nextapp",
     "docker-push": "yarn init-script && bin/docker-push.sh",
-    "lint": "./node_modules/.bin/eslint --fix 'src/**/*.jsx' "
+    "lint": "./node_modules/.bin/eslint --fix 'src/**/*.jsx' ",
+    "storybook": "start-storybook -p 9009",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@apollo/client": "^3.3.21",
@@ -27,10 +29,20 @@
     "url-loader": "^4.1.1"
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.3.4",
+    "@storybook/addon-controls": "^6.3.4",
+    "@storybook/addon-docs": "^6.3.4",
+    "@storybook/addon-essentials": "^6.3.4",
+    "@storybook/addon-links": "^6.3.4",
+    "@storybook/addon-viewport": "^6.3.4",
+    "@storybook/node-logger": "^6.3.4",
+    "@storybook/react": "^6.3.4",
     "eslint": "^7.30.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.24.0"
+    "eslint-plugin-react": "^7.24.0",
+    "storybook-addon-material-ui": "^0.9.0-alpha.24",
+    "typescript": "^4.3.5"
   }
 }
