@@ -1,15 +1,14 @@
 import React from 'react';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Box from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import { gql, useLazyQuery } from '@apollo/client';
-import logo from '../../assets/images/7eleven.png';
 import useStyles from './Home.styles';
 import Pokemon from './Pokemon';
 import { Button } from '@material-ui/core';
 import MyAppBar from '../../storybook/custom/appbar/MyAppBar';
+import HeroImage from '../../storybook/custom/hero-image/HeroImage';
+
 import useReactiveVars from '../../appState';
 
 const getRecStart = (page, recordPerPage) => page * recordPerPage;
@@ -80,22 +79,7 @@ function Home() {
        <MyAppBar />
         <main>
           {/* Main featured post */}
-          <Paper className={classes.mainFeaturedPost}>
-            {/* Increase the priority of the hero background image */}
-            <img
-              style={{ display: 'none' }}
-              src="https://source.unsplash.com/user/erondu"
-              alt="background"
-            />
-            <div className={classes.overlay} />
-            <Grid container>
-              <Grid item md={6}>
-                <div className={classes.mainFeaturedPostContent}>
-                  <img src={logo} className={classes.logo} alt="7eleveln logo" />
-                </div>
-              </Grid>
-            </Grid>
-          </Paper>
+          <HeroImage />
           {/* End main featured post */}
           <Button label="test" />
           <div>
