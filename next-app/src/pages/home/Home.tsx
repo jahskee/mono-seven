@@ -5,8 +5,9 @@ import Container from '@material-ui/core/Container';
 import { gql, useLazyQuery } from '@apollo/client';
 import useStyles from './Home.styles';
 import Pokemon from './Pokemon';
-import MyAppBar from '../../storybook/components/appbar/AppBar7';
+import AppBar7 from '../../storybook/components/appbar/AppBar7';
 import HeroImage from '../../storybook/components/hero-image/HeroImage';
+import Table7 from '../../storybook/components/table7/Table7';
 
 import useReactiveVars from '../../appState';
 
@@ -75,8 +76,9 @@ function Home() {
     <Box>
       <CssBaseline />
       <Container maxWidth="lg" className={classes.container}>
-       <MyAppBar />
+       <AppBar7 />
        <HeroImage />
+       <Table7 />
         <main>
     
           <div>

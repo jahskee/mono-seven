@@ -1,7 +1,7 @@
 import PokemonTable from "./PokemonTable";
 
 export default {
-  title: "7-Eleven/Components/PokemonTable",
+  title: "7-Eleven/Components/Table7/Components/PokemonTable",
   component: PokemonTable,
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import AppBar7 from './AppBar7';
 
 export default {
-  title: '7-Eleven/components/AppBar7',
+  title: '7-Eleven/components/Common/AppBar7',
   component: AppBar7,
   args: {  // default values
   
