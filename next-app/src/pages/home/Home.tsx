@@ -77,11 +77,9 @@ function Home() {
       <CssBaseline />
       <Container maxWidth="lg" className={classes.container}>
        <MyAppBar />
+       <HeroImage />
         <main>
-          {/* Main featured post */}
-          <HeroImage />
-          {/* End main featured post */}
-          <Button label="test" />
+    
           <div>
             <h2>Paginate</h2>
             <p>
