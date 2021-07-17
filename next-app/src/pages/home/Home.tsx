@@ -10,10 +10,10 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Container from '@material-ui/core/Container';
 import { gql, useLazyQuery } from '@apollo/client';
-import { Button } from '@material-ui/core';
 import logo from '../../assets/images/7eleven.png';
 import useStyles from './Home.styles';
 import Pokemon from './Pokemon';
+import Button from '../../storybook/components/Button'
 
 import useReactiveVars from '../../appState';
 
@@ -111,7 +111,7 @@ function Home() {
             </Grid>
           </Paper>
           {/* End main featured post */}
-
+          <Button label="test" />
           <div>
             <h2>Paginate</h2>
             <p>

@@ -1,33 +1,25 @@
 import React from 'react';
-import './button.css';
-import { makeStyles } from "@material-ui/styles";
+import Button from '@material-ui/core/Button';
 
 interface ButtonProps {
-  primary?: boolean;
-  backgroundColor?: string;
-  size?: 'small' | 'medium' | 'large';
+  color: 'primary'| 'secondary';
+  variant: 'contained';
   label: string;
   onClick?: () => void;
 }
 
-export const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
+export const ButtonX = ({
+  color = 'primary',
+  variant = "contained",
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+
   return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
+    <Button {...props} >
+         {label}
+    </Button>
   );
 };
 
-export default Button;
+export default ButtonX;
