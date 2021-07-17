@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
-
   },
   mainFeaturedPostContent: {
     alignItems: 'center',

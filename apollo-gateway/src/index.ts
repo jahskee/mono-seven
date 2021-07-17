@@ -1,7 +1,6 @@
 import express from "express";
 import { ApolloGateway } from "@apollo/gateway";
 import { ApolloServer} from "apollo-server-express";
-import { testConnect } from './db/sequelized';
 
 (async function startApolloServer() {
   
@@ -11,7 +10,6 @@ import { testConnect } from './db/sequelized';
   const gateway = new ApolloGateway({
     serviceList: [ 
       { name: "accounts", url: "http://localhost:4001/graphql"},
-      { name: "organizations", url: "http://localhost:4002/graphql"}
     ],
   });
   
@@ -24,7 +22,6 @@ import { testConnect } from './db/sequelized';
   const app = express();
   server.applyMiddleware({ app })
 
-  await testConnect();
   await new Promise((resolve:any) => app.listen({ port }, resolve));
   console.log(`🚀 Server/Gateway ready at ${server_url}${server.graphqlPath}`);
 })();

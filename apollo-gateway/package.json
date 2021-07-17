@@ -6,9 +6,8 @@
   "scripts": {
     "start": "concurrently -k npm:dev:*",
     "dev": "concurrently -k npm:dev:*",
-    "dev:graphql:accounts": "nodemon --inspect -r dotenv/config -r esm --watch 'src/**' --ext 'ts,json' --exec 'ts-node ./src/services/accounts/index.ts'",
-    "dev:graphql:organizations": "nodemon --inspect -r dotenv/config -r esm --watch 'src/**' --ext 'ts,json' --exec 'ts-node ./src/services/organizations/index.ts'",
-    "dev:graphql:gateway": "wait-on tcp:4001 & wait-on tcp:4002  && yarn gateway",
+    "dev:graphql:pokemons": "nodemon --inspect -r dotenv/config -r esm --watch 'src/**' --ext 'ts,json' --exec 'ts-node ./src/services/pokemons/index.ts'",
+    "dev:graphql:gateway": "wait-on tcp:4001 && yarn gateway",
     "gateway": "nodemon --inspect -r dotenv/config -r esm -watch 'src/**' --ext 'ts,json' --exec 'ts-node ./src/index.ts'",
     "docker-build": "docker build -t jahskee/graphql .",
     "docker-run": "yarn docker-build && docker rm -f graphql && docker run --name graphql -p 0.0.0.0:3001:3001 jahskee/graphql",

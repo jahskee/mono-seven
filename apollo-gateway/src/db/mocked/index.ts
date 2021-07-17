@@ -1,9 +1,7 @@
-import accounts from './accounts';
-import organizations from './organizations';
+import pokemons from './pokemons';
 
 const db:any = {
-  accounts,
-  organizations,
+  pokemons,
 }
 
 export default db;
