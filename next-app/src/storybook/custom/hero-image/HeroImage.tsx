@@ -3,17 +3,18 @@ import { makeStyles } from "@material-ui/core/styles";
 import logo from './image/7eleven.png';
 
 const useStyles = makeStyles((theme) => ({
-  mainFeaturedPost: {
+  heroImage: {
     backgroundColor: theme.palette.grey[800],
     color: theme.palette.common.white,
     backgroundImage: 'url(https://source.unsplash.com/user/erondu)',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
+    overflow: 'hidden',
   },
   container: {},
   logoImage: {},
-  logo: {},
+  logo: {float: 'right', width: '7rem', height: '12rem', padding:'5rem 1rem 0.4rem'},
 }));
 
 function HeroImage() {
@@ -28,7 +29,7 @@ function HeroImage() {
       />
       <Grid container>
         <Grid item md={12}>
-          <div className={classes.mainFeaturedPost}>
+          <div className={classes.heroImage}>
             <img
               src={logo}
               className={classes.logo}
