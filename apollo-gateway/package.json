@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start-prod": "concurrently -k npm:dev:*",
     "start": "concurrently -k npm:dev:*",
-    "dev": "concurrently -k npm:dev:*",
     "dev:graphql:pokemons": "nodemon --inspect -r dotenv/config -r esm --watch 'src/**' --ext 'ts,json' --exec 'ts-node ./src/services/pokemons/index.ts'",
     "dev:graphql:gateway": "wait-on tcp:4001 && yarn gateway",
     "gateway": "nodemon --inspect -r dotenv/config -r esm -watch 'src/**' --ext 'ts,json' --exec 'ts-node ./src/index.ts'",
