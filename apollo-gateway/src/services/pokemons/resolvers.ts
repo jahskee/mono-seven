@@ -14,7 +14,7 @@ const resolvers = {
       return db.pokemons;
     },
     pokemon: (parent:unknown, { id }: {id: string}, context: unknown, info: unknown) => {
-      return db.pokemon.find( (item: any) => item.id === id );
+      return db.pokemons.find( (item: any) => item.id === id );
     },
   },
 };

@@ -9,7 +9,7 @@ import { ApolloServer} from "apollo-server-express";
 
   const gateway = new ApolloGateway({
     serviceList: [ 
-      { name: "accounts", url: "http://localhost:4001/graphql"},
+      { name: "pokemons", url: "http://localhost:4001/graphql"},
     ],
   });
   

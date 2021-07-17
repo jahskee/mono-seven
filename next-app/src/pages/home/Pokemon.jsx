@@ -12,7 +12,7 @@ const GET_POKEMON = gql`
   }
 `;
 
-function Organization({ id, page }) {
+function Pokemon({ id, page }) {
   const { loading, error, data } = useQuery(GET_POKEMON, {
     variables: { id },
   });
@@ -29,8 +29,8 @@ function Organization({ id, page }) {
   );
 }
 
-Organization.propTypes = {
+Pokemon.propTypes = {
   id: T.string.isRequired,
 };
 
-export default Organization;
+export default Pokemon;
