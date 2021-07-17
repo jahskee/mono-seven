@@ -12,6 +12,5 @@ function MyApp({ Component, pageProps }) {
 }
 MyApp.propTypes = {
   Component: T.elementType.isRequired,
-  pageProps: T.node.isRequired,
 };
 export default MyApp;
