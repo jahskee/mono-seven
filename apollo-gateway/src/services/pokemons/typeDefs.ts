@@ -7,7 +7,7 @@ const typeDefs = gql`
     url: String!
   }
   extend type Query {
-    pokemon(id: ID!): Pokemon
+    pokemon(id: ID!): Pokemon!
     pokemons: [Pokemon!]!
     allPokemons: [Pokemon!]!
   }
