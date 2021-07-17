@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function MyAppBar() {
+function AppBar7() {
   const classes = useStyles();
   return (
     <AppBar position="static">
@@ -29,4 +29,4 @@ function MyAppBar() {
   );
 }
 
-export default MyAppBar;
+export default AppBar7;

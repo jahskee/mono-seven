@@ -12,5 +12,5 @@ export default {
 };
 
 const Template = (args) => (<HeroImage {...args} />);
-export const Default = Template.bind({});
-Default.args = {}
+export const Widget = Template.bind({});
+Widget.args = {}
