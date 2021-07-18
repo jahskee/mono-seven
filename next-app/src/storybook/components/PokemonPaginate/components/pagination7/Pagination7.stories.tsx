@@ -8,6 +8,4 @@ export default {
 const Template = (args) => (<Pagination7 {...args} />);
 
 export const Widget = Template.bind({});
-Widget.args = {
-
-}
+Widget.args = {}

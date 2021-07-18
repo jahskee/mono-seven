@@ -76,7 +76,7 @@ function Home() {
   return (
     <Box>
       <CssBaseline />
-      <Container maxWidth="lg" className={classes.container}>
+      <Container className={classes.container}>
        <AppBar7 />
        <HeroImage />
        <Table7 />

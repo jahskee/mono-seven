@@ -16,19 +16,20 @@ const useStyles = makeStyles({
     minWidth: '300px'
   }
 })
+
 function Home() {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <Grid container spacing={0} className={classes.main} >
+      <Grid container spacing={0} className={classes.main}  >
           <Grid item sm={12} xs={12}>
             <Header />
           </Grid>
           <Grid container spacing={5}>
-            <Grid item sm={6} xs={12}>
+            <Grid item md={5} xs={12}>
               <SearchPanel />
             </Grid>
-            <Grid item sm={6} xs={12}>
+            <Grid item md={7} xs={12}>
               <PokemonPaginate />
             </Grid>
           </Grid>
