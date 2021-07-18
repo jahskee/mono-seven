@@ -3,21 +3,24 @@ import { ApolloProvider } from "@apollo/client";
 import T from "prop-types";
 import client from "./apollo-client";
 
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+//import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import useReactiveVars from '../appState';
 
 function MyApp({ Component, pageProps }) {
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  //const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  const { useDarkMode } = useReactiveVars();
+  const { darkMode } = useDarkMode();
 
   const theme = React.useMemo(
     () =>
       createTheme({
         palette: {
-          type: prefersDarkMode ? "dark" : "light",
+          type: darkMode ? "dark" : "light",
         },
       }),
-    [prefersDarkMode]
+    [darkMode]
   );
 
   return (
