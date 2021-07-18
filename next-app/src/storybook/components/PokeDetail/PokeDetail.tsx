@@ -37,7 +37,8 @@ const rows = [
 
 const useStyles = makeStyles({
   root: {
-    paddingLeft: '2rem',
+    display: 'flex',
+    paddingLeft: '1rem',
     paddingBottom: '1rem',
   },
   table: {
@@ -51,11 +52,13 @@ const useStyles = makeStyles({
   imgRow: {
     display: "flex",
     justifyContent: "flex-end",
-    paddingRight: '1rem'
+    paddingRight: '0.5rem'
   },
   img: {
     width: '40px',
-    padding: '0'
+    height: '40px',
+    padding: '0',
+    marginTop: '1.2rem',    
   }
 });
 
