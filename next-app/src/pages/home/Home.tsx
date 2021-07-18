@@ -6,7 +6,7 @@ import { gql, useLazyQuery } from '@apollo/client';
 import useStyles from './Home.styles';
 import Pokemon from './Pokemon';
 
-import AppBar7 from '../../storybook/components/Header/components/appbar/AppBar7';
+import AppBar7 from '../../storybook/components/Header/components/TopMenuBar/TopMenuBar';
 import HeroImage from '../../storybook/components/Header/components/hero-image/HeroImage';
 import Table7 from '../../storybook/components/PokemonPaginate/PokemonPaginate';
 
