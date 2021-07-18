@@ -1,7 +1,7 @@
-import Table7 from './Table7';
+import Table7 from './PokemonPaginate';
 
 export default {
-  title: "7-Eleven/Components/Table7",
+  title: "7-Eleven/Components/PokemonPaginate",
   component: Table7,
 }
 
