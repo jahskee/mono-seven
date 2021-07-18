@@ -9,19 +9,18 @@ import { Grid } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-    justifyContent: "space-betwwen",
+    justifyContent: "space-between",
   },
   menuButton: {
     //display: "flex",
-   // flexDirection: "column",
-   
+    // flexDirection: "column",
   },
   title: {
     fontSize: "1rem",
   },
   menuItem: {
-    paddingLeft: '5px',
-  }
+    paddingLeft: "5px",
+  },
 }));
 
 function AppBar7() {
@@ -36,18 +35,17 @@ function AppBar7() {
   return (
     <AppBar position="static">
       <Toolbar className={classes.root}>
-   
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="menu"
-            >
-              <MenuIcon />
-              <Typography className={classes.menuItem}>Menu</Typography>
-            </IconButton>
-      
-
+        <Box>
+          <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="menu"
+          >
+            <MenuIcon />
+            <Typography className={classes.menuItem}>Menu</Typography>
+          </IconButton>
+        </Box>
         <IOSSwitch checked={darkMode} onChange={handleChange} />
       </Toolbar>
     </AppBar>
