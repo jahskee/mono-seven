@@ -1,9 +1,14 @@
 import React from 'react';
+import SearchBar from "material-ui-search-bar";
 
 function SearchBox(){
   return (
     <div>
-      Test
+      <SearchBar
+    value="test"
+    onChange={(newValue) => {}}
+    onRequestSearch={() => { }}
+  />
     </div>
   )
 }

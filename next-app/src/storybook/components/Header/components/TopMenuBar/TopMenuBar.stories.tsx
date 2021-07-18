@@ -1,8 +1,8 @@
 import React from 'react';
-import AppBar7 from './AppBar7';
+import AppBar7 from './TopMenuBar';
 
 export default {
-  title: '7-Eleven/Components/Header/Components/AppBar7',
+  title: '7-Eleven/Components/Header/Components/TopMenuBar',
   component: AppBar7,
   args: {  // default values
   
