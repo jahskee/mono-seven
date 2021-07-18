@@ -1,7 +1,7 @@
 import SearchBox from './SearchBox'
 
 export default {
-  title: "7-Eleven/Components/SearchBox",
+  title: "7-Eleven/Components/SearchPanel/Components/SearchBox",
   component: SearchBox,
 }
 

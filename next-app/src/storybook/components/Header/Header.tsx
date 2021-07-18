@@ -1,5 +1,5 @@
 import AppBar7 from './components/TopMenuBar/TopMenuBar';
-import HeroImage from './components/hero-image/HeroImage';
+import HeroImage from './components/HeroImage/HeroImage';
 function Header() {
   return (
     <div>
