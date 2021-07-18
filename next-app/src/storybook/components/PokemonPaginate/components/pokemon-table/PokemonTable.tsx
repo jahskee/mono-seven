@@ -24,6 +24,9 @@ const useRowStyles = makeStyles({
   tableCell: {
     padding: '0',
     paddingRight: '1rem'
+  },
+  firstColumn: {
+    width: '2.5rem',
   }
 });
 
@@ -50,7 +53,7 @@ function Row(props) {
   return (
     <React.Fragment>
       <TableRow className={classes.root}>
-        <TableCell padding="none" >
+        <TableCell padding="none"  className={classes.firstColumn} >
           <IconButton
             aria-label="expand row"
             size="small"
@@ -114,6 +117,9 @@ const rows = [
 const useTableStyles = makeStyles({
   tableContainer: {
     marginTop: "0",
+  },
+  table: {
+   
   }
 });
 
@@ -122,7 +128,7 @@ export default function PokemonTable() {
   return (
     <div className={classes.tableContainer}>
       <TableContainer component={Paper}>
-        <Table aria-label="collapsible table">
+        <Table className={classes.table} aria-label="collapsible table">
           <TableHead>
             <TableRow>
               <TableCell />

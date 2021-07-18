@@ -24,6 +24,9 @@ const useRowStyles = makeStyles({
   tableCell: {
     padding: '0',
     paddingRight: '1rem'
+  },
+  firstColumn: {
+    width: '2.5rem',
   }
 });
 
@@ -50,7 +53,7 @@ function Row(props) {
   return (
     <React.Fragment>
       <TableRow className={classes.root}>
-        <TableCell padding="none" >
+        <TableCell padding="none" className={classes.firstColumn}>
           <IconButton
             aria-label="expand row"
             size="small"

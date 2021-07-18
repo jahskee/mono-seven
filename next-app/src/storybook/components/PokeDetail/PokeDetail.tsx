@@ -42,7 +42,8 @@ const useStyles = makeStyles({
   },
   table: {
     minWidth: 300,
-    padding: "5"
+    padding: "5",
+    paddingLeft: '8px',
   },
   cell: {
     padding: "5px"
