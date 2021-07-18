@@ -113,7 +113,7 @@ const rows = [
 
 const useTableStyles = makeStyles({
   tableContainer: {
-    marginTop: "1rem",
+    marginTop: "0",
   }
 });
 

@@ -38,6 +38,7 @@ const rows = [
 const useStyles = makeStyles({
   root: {
     paddingLeft: '2rem',
+    paddingBottom: '2rem',
   },
   table: {
     minWidth: 300,

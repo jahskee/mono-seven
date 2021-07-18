@@ -4,8 +4,8 @@ import { makeStyles } from '@material-ui/styles';
 
 const useStyles = makeStyles({
 
-  divider: {
-    padding: '0.5rem',
+  seachResult: {
+    padding: '8px',
   }
 });
 
@@ -14,8 +14,8 @@ function SearchPanel() {
   return (
     <div>
       <SearchBox />
-      <div className={classes.divider}/>
-      <SearchResult />
+      
+      <SearchResult/>
     </div>
   )
 }

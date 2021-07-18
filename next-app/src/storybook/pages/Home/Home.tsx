@@ -14,6 +14,9 @@ const useStyles = makeStyles({
   main: {
     maxWidth: '1200px',
     minWidth: '300px'
+  },
+  body: {
+    paddingTop: '8px',
   }
 })
 
@@ -21,11 +24,11 @@ function Home() {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <Grid container spacing={0} className={classes.main}  >
+      <Grid container className={classes.main} spacing={1}  >
           <Grid item sm={12} xs={12}>
             <Header />
           </Grid>
-          <Grid container spacing={5}>
+          <Grid className={classes.body} container spacing={1}>
             <Grid item md={5} xs={12}>
               <SearchPanel />
             </Grid>
