@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     minWidth: '300px'
   },
   body: {
-    paddingTop: '8px',
+    paddingTop: '4px',
   }
 })
 
@@ -28,7 +28,7 @@ function Home() {
           <Grid item sm={12} xs={12}>
             <Header />
           </Grid>
-          <Grid className={classes.body} container spacing={1}>
+          <Grid container  className={classes.body} spacing={1}>
             <Grid item md={5} xs={12}>
               <SearchPanel />
             </Grid>
