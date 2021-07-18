@@ -12,6 +12,7 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/preset-create-react-app",
-    "storybook-add-material-ui"
+    "storybook-add-material-ui",
+    "storybook-dark-mode"
   ]
 }
