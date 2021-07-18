@@ -19,7 +19,9 @@ const useStyles = makeStyles((theme) => ({
   title: {
     fontSize: "1rem",
   },
-
+  menuItem: {
+    paddingLeft: '5px',
+  }
 }));
 
 function AppBar7() {
@@ -42,7 +44,7 @@ function AppBar7() {
               aria-label="menu"
             >
               <MenuIcon />
-              <Typography>Home</Typography>
+              <Typography className={classes.menuItem}>Menu</Typography>
             </IconButton>
       
 
