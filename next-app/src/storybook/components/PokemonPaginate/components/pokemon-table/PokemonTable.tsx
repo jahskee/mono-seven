@@ -42,8 +42,6 @@ const useRowStyles = makeStyles({
     //paddingBottom: '0',
   },
   imgRow: {
-  //  display: "flex",
-  //  justifyContent: "flex-end",
     padding: '0',
   },
   img: {
@@ -54,8 +52,7 @@ const useRowStyles = makeStyles({
   },
 });
 
-function Row(props) {
-  const { row } = props;
+function Row({ pokemon }) {
   const [open, setOpen] = React.useState(false);
   const classes = useRowStyles();
 
@@ -73,24 +70,24 @@ function Row(props) {
         </TableCell>
         <TableCell className={classes.secondColumn} style={{padding:0, width: 35}}>
           <div className={classes.imgRow}>
-          <img className={classes.img} src={row.image} />
+          <img className={classes.img} src={pokemon.image} />
           </div>
         </TableCell>
 
         <TableCell component="th" scope="row" padding="none" align="left">
        
-          {row.name}
+          {pokemon.name}
         </TableCell>
-        <TableCell className={classes.tableCell} align="left">{row.height}</TableCell >
-        <TableCell className={classes.tableCell} align="left">{row.weight}</TableCell>
-        <TableCell className={classes.tableCell} align="left">{row.order}</TableCell>
+        <TableCell className={classes.tableCell} align="left">{pokemon.generation}</TableCell >
+        <TableCell className={classes.tableCell} align="left">{pokemon.weight+" lbs"}</TableCell>
+        <TableCell className={classes.tableCell} align="left">{pokemon.xp}</TableCell>
 
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box margin={1} paddingLeft={1}>
-             <PokeDetail pokemon={row}/>
+             <PokeDetail pokemon={pokemon}/>
             </Box>
           </Collapse>
         </TableCell>
@@ -122,7 +119,7 @@ const useTableStyles = makeStyles({
   }
 });
 
-export default function PokemonTable({rows}) {
+export default function PokemonTable({pokemons}) {
   const classes = useTableStyles();
   return (
     <Paper className={classes.tableContainer}>
@@ -133,14 +130,14 @@ export default function PokemonTable({rows}) {
               <TableCell />
               <TableCell ></TableCell>
               <TableCell className={classes.firstCell} align="left">Name</TableCell>
-              <TableCell className={classes.tableCell} align="left">Height</TableCell>
+              <TableCell className={classes.tableCell} align="left">Generation</TableCell>
               <TableCell className={classes.tableCell} align="left">Weight</TableCell>
-              <TableCell className={classes.tableCell} align="left">Order</TableCell>
+              <TableCell className={classes.tableCell} align="left">Experience</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
-              <Row key={row.name} row={row} />
+            {pokemons.map((pokemon) => (
+              <Row key={pokemon.name} pokemon={pokemon} />
             ))}
           </TableBody>
         </Table>

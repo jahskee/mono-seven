@@ -90,18 +90,18 @@ export default function PokeDetail({ pokemon }) {
 
               <StyledTableRow key={pokemon.id}>
                 <StyledTableCell className={classes.cell}>
-                  <b>id</b>
+                  <b>weight</b>
                 </StyledTableCell>
                 <StyledTableCell className={classes.cell}>
-                  {pokemon.id}
+                  {pokemon.weight+" lbs"}
                 </StyledTableCell>
               </StyledTableRow>
               <StyledTableRow key={pokemon.id}>
                 <StyledTableCell className={classes.cell}>
-                  <b>height</b>
+                  <b>accuracy</b>
                 </StyledTableCell>
                 <StyledTableCell className={classes.cell}>
-                  {pokemon.height}
+                  {pokemon.accuracy}
                 </StyledTableCell>
               </StyledTableRow>
             </TableBody>
@@ -113,23 +113,23 @@ export default function PokeDetail({ pokemon }) {
             <TableBody>
               <StyledTableRow key={pokemon.id}>
                 <StyledTableCell className={classes.cell} align="left">
-                  <b>weight</b>
+                  <b>power</b>
                 </StyledTableCell>
                 <StyledTableCell className={classes.cell} align="left">
-                  {pokemon.weight}
-                </StyledTableCell>
-              </StyledTableRow>
-              <StyledTableRow key={pokemon.id}>
-                <StyledTableCell className={classes.cell} align="left">
-                  <b>order</b>
-                </StyledTableCell>
-                <StyledTableCell className={classes.cell} align="left">
-                  {pokemon.order}
+                  {pokemon.power}
                 </StyledTableCell>
               </StyledTableRow>
               <StyledTableRow key={pokemon.id}>
                 <StyledTableCell className={classes.cell} align="left">
-                  <b>xp</b>
+                  <b>generation</b>
+                </StyledTableCell>
+                <StyledTableCell className={classes.cell} align="left">
+                  {pokemon.generation}
+                </StyledTableCell>
+              </StyledTableRow>
+              <StyledTableRow key={pokemon.id}>
+                <StyledTableCell className={classes.cell} align="left">
+                  <b>experience</b>
                 </StyledTableCell>
                 <StyledTableCell className={classes.cell} align="left">
                   {pokemon.xp}
