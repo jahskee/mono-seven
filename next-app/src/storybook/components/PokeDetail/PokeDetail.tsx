@@ -1,6 +1,6 @@
 import React from "react";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
-import { Table, Card } from "@material-ui/core";
+import { Table, Box,sCard, Typography } from "@material-ui/core";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
@@ -74,14 +74,14 @@ export default function PokeDetail({ pokemon }) {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Card className={classes.container}>
-        <TableContainer className={classes.tableContainer}>
+    <Box className={classes.root} style={{paddingBottom: '5px', paddingLeft: '1.5rem'}}>
+     
+        <TableContainer className={classes.tableContainer} component={Paper} style={{padding: '2px'}}>
           <Table className={classes.table} aria-label="a dense table">
             <TableBody>
               <StyledTableRow key={pokemon.id}>
                 <StyledTableCell className={classes.cell}>
-                  <b>name</b>
+                 <b>name</b>
                 </StyledTableCell>
                 <StyledTableCell className={classes.cell}>
                   {pokemon.name}
@@ -108,7 +108,7 @@ export default function PokeDetail({ pokemon }) {
           </Table>
         </TableContainer>
 
-        <TableContainer component={Paper} className={classes.tableContainer}>
+        <TableContainer component={Paper} className={classes.tableContainer} style={{padding: '2px'}}>
           <Table className={classes.table} aria-label="customized table">
             <TableBody>
               <StyledTableRow key={pokemon.id}>
@@ -138,10 +138,10 @@ export default function PokeDetail({ pokemon }) {
             </TableBody>
           </Table>
         </TableContainer>
-      </Card>
+    
       <div className={classes.imgRow} style={{paddingTop: 8}}>
         <img className={classes.img} src={pokemon.image} />
       </div>
-    </div>
+    </Box>
   );
 }
