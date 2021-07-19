@@ -22,28 +22,13 @@ const useRowStyles = makeStyles({
     },
   },
   tableCell: {
-    padding: '0',
+    padding: '1px',
     paddingRight: '1rem'
   },
   firstColumn: {
     width: '2.5rem',
   }
 });
-
-function createData(name, calories, fat, carbs, protein, price) {
-  return {
-    name,
-    calories,
-    fat,
-    carbs,
-    protein,
-    price,
-    history: [
-      { date: "2020-01-05", customerId: "11091700", amount: 3 },
-      { date: "2020-01-02", customerId: "Anonymous", amount: 1 },
-    ],
-  };
-}
 
 function Row(props) {
   const { row } = props;
@@ -53,7 +38,7 @@ function Row(props) {
   return (
     <React.Fragment>
       <TableRow className={classes.root}>
-        <TableCell padding="none"  className={classes.firstColumn} >
+        <TableCell padding="none"  className={`${classes.tableCell} ${classes.firstColumn}`} >
           <IconButton
             aria-label="expand row"
             size="small"
@@ -65,10 +50,10 @@ function Row(props) {
         <TableCell component="th" scope="row" padding="none">
           {row.name}
         </TableCell>
-        <TableCell className={classes.tableCell} align="right">{row.calories}</TableCell >
-        <TableCell className={classes.tableCell} align="right">{row.fat}</TableCell>
-        <TableCell className={classes.tableCell} align="right">{row.carbs}</TableCell>
-        <TableCell className={classes.tableCell} align="right">{row.protein}</TableCell>
+        <TableCell className={classes.tableCell} align="right">{row.height}</TableCell >
+        <TableCell className={classes.tableCell} align="right">{row.weight}</TableCell>
+        <TableCell className={classes.tableCell} align="right">{row.order}</TableCell>
+        <TableCell className={classes.tableCell} align="right">{row.xp}</TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -101,19 +86,6 @@ Row.propTypes = {
   }).isRequired,
 };
 
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0, 3.99),
-  createData("Ice cream sandwich", 237, 9.0, 37, 4.3, 4.99),
-  createData("Eclair", 262, 16.0, 24, 6.0, 3.79),
-  createData("Cupcake", 305, 3.7, 67, 4.3, 2.5),
-  createData("Gingerbread", 356, 16.0, 49, 3.9, 1.5),
-  createData("Frozen yoghurt1", 159, 6.0, 24, 4.0, 3.99),
-  createData("Ice cream sandwich1", 237, 9.0, 37, 4.3, 4.99),
-  createData("Eclair1", 262, 16.0, 24, 6.0, 3.79),
-  createData("Cupcake1", 305, 3.7, 67, 4.3, 2.5),
-  createData("Gingerbread1", 356, 16.0, 49, 3.9, 1.5),
-];
-
 const useTableStyles = makeStyles({
   tableContainer: {
     marginTop: "0",
@@ -123,7 +95,7 @@ const useTableStyles = makeStyles({
   }
 });
 
-export default function PokemonTable() {
+export default function PokemonTable({rows}) {
   const classes = useTableStyles();
   return (
     <div className={classes.tableContainer}>
@@ -133,10 +105,10 @@ export default function PokemonTable() {
             <TableRow>
               <TableCell />
               <TableCell>Pokemon</TableCell>
-              <TableCell align="right">Calories</TableCell>
-              <TableCell align="right">Fat&nbsp;(g)</TableCell>
-              <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-              <TableCell align="right">Protein&nbsp;(g)</TableCell>
+              <TableCell align="right">Height</TableCell>
+              <TableCell align="right">Weight</TableCell>
+              <TableCell align="right">Order</TableCell>
+              <TableCell align="right">XP</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
