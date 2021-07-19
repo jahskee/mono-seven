@@ -19,9 +19,7 @@ const StyledTableCell = withStyles((theme) => ({
 
 const StyledTableRow = withStyles((theme) => ({
   root: {
-    "&:nth-of-type(odd)": {
-      backgroundColor: theme.palette.action.hover,
-    },
+    backgroundColor: theme.palette.action.hover,
   },
 }))(TableRow);
 
@@ -33,13 +31,17 @@ const useStyles = makeStyles({
   },
   tableContainer: {
     width: "50%",
+    paddingLeft: "1px",
   },
   table: {
     padding: "5",
     paddingLeft: "8px",
+    //backgroundColor: 'lightgray',
   },
   cell: {
-    padding: "5px",
+    padding: "2px",
+    paddingLeft: "1rem",
+    paddingTop: "8px",
   },
   imgRow: {
     display: "flex",
@@ -81,7 +83,7 @@ export default function PokeDetail() {
           <Table className={classes.table} aria-label="customized table">
             <TableBody>
               <StyledTableRow key={pokemon.id}>
-                <StyledTableCell className={classes.cell} align="left">
+                <StyledTableCell className={classes.cell} >
                   <b>id</b>
                 </StyledTableCell>
                 <StyledTableCell className={classes.cell} align="left">
@@ -111,6 +113,14 @@ export default function PokeDetail() {
         <TableContainer component={Paper} className={classes.tableContainer}>
           <Table className={classes.table} aria-label="customized table">
             <TableBody>
+              <StyledTableRow key={pokemon.id}>
+                <StyledTableCell className={classes.cell} align="left">
+                  <b>name</b>
+                </StyledTableCell>
+                <StyledTableCell className={classes.cell} align="left">
+                  {pokemon.name}
+                </StyledTableCell>
+              </StyledTableRow>
               <StyledTableRow key={pokemon.id}>
                 <StyledTableCell className={classes.cell} align="left">
                   <b>order</b>
