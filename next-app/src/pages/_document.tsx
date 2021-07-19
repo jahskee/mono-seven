@@ -32,20 +32,10 @@ class MyDocument extends Document {
               }
               body {
                 font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-                font-size: 1rem;
+                font-size: 16px;
                 margin: 0;
                 margin-bottom: 100px;
                 background-color: red;
-              }
-              nav.MuiPagination-root {
-                margin: 0px;
-              }
-              td.MuiTableCell-body {
-                padding: 6px 10px 6px 16px;
-                color: #fff;
-              }
-              td.MuiTableCell-head {
-                padding: 4px 4px 4px 16px;
               }
             `}
           </style>

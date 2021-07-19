@@ -2,6 +2,7 @@ import React from "react";
 import { ApolloProvider } from "@apollo/client";
 import T from "prop-types";
 import client from "./apollo-client";
+import './styles.css'
 
 //import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
@@ -23,15 +24,15 @@ function MyApp({ Component, pageProps }) {
       }),
     [darkMode]
   );
-  
+
   return (
     <ApolloProvider client={client}>
-      <ThemeProvider theme={theme}>
-        <StylesProvider injectFirst>
+      <StylesProvider injectFirst>
+        <ThemeProvider theme={theme}>
           <CssBaseline />
           <Component {...pageProps} />
-        </StylesProvider>
-      </ThemeProvider>
+        </ThemeProvider>
+      </StylesProvider>
     </ApolloProvider>
   );
 }

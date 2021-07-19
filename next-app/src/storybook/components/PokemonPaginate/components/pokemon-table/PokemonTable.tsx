@@ -14,7 +14,7 @@ import Paper from "@material-ui/core/Paper";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import PokeDetail from "../../../PokeDetail/PokeDetail";
-
+import './PokemonTable.module.css';
 
 const tableCell ={
   padding: '0px',
@@ -37,17 +37,19 @@ const useRowStyles = makeStyles({
     ...tableCell,
     width: '3rem',
     padding: '0',
+    paddingLeft: 0,
+
     //paddingBottom: '0',
   },
   imgRow: {
   //  display: "flex",
   //  justifyContent: "flex-end",
-    padding: 0,
+    padding: '0',
   },
   img: {
     width: "20px",
     height: "20px",
-    padding: "0",
+    padding: '0',
     marginTop: "10px",
   },
 });
@@ -123,7 +125,7 @@ const useTableStyles = makeStyles({
 export default function PokemonTable({rows}) {
   const classes = useTableStyles();
   return (
-    <div className={classes.tableContainer}>
+    <Paper className={classes.tableContainer}>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="collapsible table">
           <TableHead>
@@ -143,6 +145,6 @@ export default function PokemonTable({rows}) {
           </TableBody>
         </Table>
       </TableContainer>
-    </div>
+    </Paper>
   );
 }
