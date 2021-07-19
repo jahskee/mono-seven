@@ -69,10 +69,11 @@ export default function PokeDetail({pokemon}) {
       </div>
 
       <Card className={classes.container}>
-        <TableContainer component={Paper} className={classes.tableContainer}>
-          <Table className={classes.table} aria-label="customized table">
+        <Paper></Paper>
+        <TableContainer className={classes.tableContainer}>
+          <Table className={classes.table} aria-label="a dense table">
             <TableBody>
-            <StyledTableRow key={pokemon.id}>
+            <StyledTableRow key={pokemon.id} className={classes.tableRow}>
                 <StyledTableCell className={classes.cell} align="left">
                   <b>name</b>
                 </StyledTableCell>
