@@ -48,10 +48,11 @@ const useStyles = makeStyles({
     paddingRight: "0.5rem",
   },
   img: {
-    width: "40px",
-    height: "40px",
+    width: "70px",
+    height: "70px",
     padding: "0",
     marginTop: "1.2rem",
+    marginLeft: '1rem'
   },
   container: {
     display: "flex",
@@ -64,10 +65,7 @@ export default function PokeDetail({pokemon}) {
 
   return (
     <div className={classes.root}>
-      <div className={classes.imgRow}>
-        <img className={classes.img} src={pokemon.image} />
-      </div>
-
+    
       <Card className={classes.container}>
         <Paper></Paper>
         <TableContainer className={classes.tableContainer}>
@@ -132,7 +130,13 @@ export default function PokeDetail({pokemon}) {
             </TableBody>
           </Table>
         </TableContainer>
+
+        
       </Card>
+      <div className={classes.imgRow}>
+        <img className={classes.img} src={pokemon.image} />
+      </div>
+
     </div>
   );
 }

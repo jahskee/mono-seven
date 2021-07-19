@@ -22,12 +22,24 @@ const useRowStyles = makeStyles({
     },
   },
   tableCell: {
-    padding: '1px',
+    padding: '6px',
     paddingRight: '1rem'
   },
   firstColumn: {
     width: '2.5rem',
-  }
+    paddingRight: '0'
+  },
+  imgRow: {
+  //  display: "flex",
+  //  justifyContent: "flex-end",
+   // paddingRight: "0.5rem",
+  },
+  img: {
+    width: "25px",
+    height: "25px",
+    padding: "0",
+    //marginTop: "1.2rem",
+  },
 });
 
 function Row(props) {
@@ -47,13 +59,20 @@ function Row(props) {
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
+        <TableCell className={classes.tableCell} >
+          <div className={classes.imgRow}>
+          <img className={classes.img} src={row.image} />
+          </div>
+        </TableCell>
+
         <TableCell component="th" scope="row" padding="none">
+       
           {row.name}
         </TableCell>
         <TableCell className={classes.tableCell} align="right">{row.height}</TableCell >
         <TableCell className={classes.tableCell} align="right">{row.weight}</TableCell>
         <TableCell className={classes.tableCell} align="right">{row.order}</TableCell>
-        <TableCell className={classes.tableCell} align="right">{row.xp}</TableCell>
+
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -104,11 +123,11 @@ export default function PokemonTable({rows}) {
           <TableHead>
             <TableRow>
               <TableCell />
-              <TableCell>Pokemon</TableCell>
+              <TableCell align="right"></TableCell>
+              <TableCell align="left">Name</TableCell>
               <TableCell align="right">Height</TableCell>
               <TableCell align="right">Weight</TableCell>
               <TableCell align="right">Order</TableCell>
-              <TableCell align="right">XP</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

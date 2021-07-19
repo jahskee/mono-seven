@@ -5,12 +5,14 @@ import { makeStyles } from '@material-ui/styles';
 import { Box } from '@material-ui/core';
 
 
-const useStyle = makeStyles({
-  bottom: {
+const useStyle = makeStyles(theme => ({
+  paginate: {
     display: 'flex',
     justifyContent: 'flex-end',
+    paddingBottom: '8px'
+    
   }
-});
+}));
 
 const rows = [
   { id: '61', name: 'Poke1', height: '159', weight:'6.0', order: '24', xp: '4.0', image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10.png" },
@@ -29,11 +31,12 @@ function Table7() {
   const classes = useStyle();
   return(
     <div>
-      <PokemonTable rows={rows} />
-      <Box className={classes.bottom}>
+      <Box className={classes.paginate}>
         <Pagination7 />
       </Box>
      
+      <PokemonTable rows={rows} />
+   
     </div>
   )
 
