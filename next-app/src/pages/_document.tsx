@@ -41,7 +41,8 @@ class MyDocument extends Document {
                 margin: 0px;
               }
               td.MuiTableCell-body {
-                padding: 4px 0 4px 0;
+                padding: 6px 10px 6px 16px;
+                color: #fff;
               }
               td.MuiTableCell-head {
                 padding: 4px 4px 4px 16px;

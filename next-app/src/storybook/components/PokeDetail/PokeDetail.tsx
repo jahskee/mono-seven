@@ -14,7 +14,10 @@ const StyledTableCell = withStyles((theme) => ({
   },
   body: {
     fontSize: 14,
+    border: 1,
+    padding: 0
   },
+  
 }))(TableCell);
 
 const StyledTableRow = withStyles((theme) => ({
@@ -31,19 +34,22 @@ const useStyles = makeStyles({
   },
   tableContainer: {
     width: "50%",
-    paddingLeft: "1px",
-    
+    paddingLeft: "5px",
   },
   table: {
     padding: "5",
+    paddingLeft: '1rem',
   },
   cell: {
-   
-    paddingLeft: '16px'
-    //paddingTop: "8px",
+    margin: 0,
+    paddingLeft: "10px",
+    border: '0',
+
   },
   tableRow: {
-    padding: 0
+    padding: '10px',
+    margin: 0,
+
   },
   imgRow: {
     display: "flex",
@@ -55,51 +61,50 @@ const useStyles = makeStyles({
     height: "70px",
     padding: "0",
     marginTop: "0.6rem",
-    marginLeft: '0.5rem',
-    marginRight: '1rem'
+    marginLeft: "0.5rem",
+    marginRight: "1rem",
   },
   container: {
     display: "flex",
     width: "100%",
+    marginLeft: '10px'
   },
 });
 
-export default function PokeDetail({pokemon}) {
+export default function PokeDetail({ pokemon }) {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-    
       <Card className={classes.container}>
-        <Paper></Paper>
         <TableContainer className={classes.tableContainer}>
           <Table className={classes.table} aria-label="a dense table">
             <TableBody>
-            <StyledTableRow key={pokemon.id}>
-                <StyledTableCell className={classes.cell} align="left">
+              <StyledTableRow key={pokemon.id}>
+                <StyledTableCell className={classes.cell}>
                   <b>name</b>
                 </StyledTableCell>
-                <StyledTableCell className={classes.cell} align="left">
+                <StyledTableCell className={classes.cell}>
                   {pokemon.name}
                 </StyledTableCell>
               </StyledTableRow>
+
               <StyledTableRow key={pokemon.id}>
-                <StyledTableCell className={classes.cell} >
+                <StyledTableCell className={classes.cell}>
                   <b>id</b>
                 </StyledTableCell>
-                <StyledTableCell className={classes.cell} align="left">
+                <StyledTableCell className={classes.cell}>
                   {pokemon.id}
                 </StyledTableCell>
               </StyledTableRow>
               <StyledTableRow key={pokemon.id}>
-                <StyledTableCell className={classes.cell} align="left">
+                <StyledTableCell className={classes.cell}>
                   <b>height</b>
                 </StyledTableCell>
-                <StyledTableCell className={classes.cell} align="left">
+                <StyledTableCell className={classes.cell}>
                   {pokemon.height}
                 </StyledTableCell>
               </StyledTableRow>
-          
             </TableBody>
           </Table>
         </TableContainer>
@@ -107,7 +112,7 @@ export default function PokeDetail({pokemon}) {
         <TableContainer component={Paper} className={classes.tableContainer}>
           <Table className={classes.table} aria-label="customized table">
             <TableBody>
-            <StyledTableRow key={pokemon.id}>
+              <StyledTableRow key={pokemon.id}>
                 <StyledTableCell className={classes.cell} align="left">
                   <b>weight</b>
                 </StyledTableCell>
@@ -134,13 +139,10 @@ export default function PokeDetail({pokemon}) {
             </TableBody>
           </Table>
         </TableContainer>
-
-        
       </Card>
       <div className={classes.imgRow}>
         <img className={classes.img} src={pokemon.image} />
       </div>
-
     </div>
   );
 }

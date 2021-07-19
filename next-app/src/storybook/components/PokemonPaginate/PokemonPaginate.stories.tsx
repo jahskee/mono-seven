@@ -1,5 +1,4 @@
 import Table7 from './PokemonPaginate';
-import './PokemonPaginate.modules.css';
 
 export default {
   title: "7-Eleven/Components/PokemonPaginate",
