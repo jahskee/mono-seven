@@ -1,6 +1,6 @@
 import React from "react";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
+import { Table, Grid } from "@material-ui/core";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
@@ -31,8 +31,10 @@ const useStyles = makeStyles({
     paddingLeft: "1rem",
     paddingBottom: "1rem",
   },
+  tableContainer: {
+    width: "50%",
+  },
   table: {
-    minWidth: 300,
     padding: "5",
     paddingLeft: "8px",
   },
@@ -50,6 +52,10 @@ const useStyles = makeStyles({
     padding: "0",
     marginTop: "1.2rem",
   },
+  divider: {
+    display: "flex",
+    width: "100%",
+  },
 });
 
 export default function PokeDetail() {
@@ -61,47 +67,70 @@ export default function PokeDetail() {
     weight: "6.0",
     order: "24",
     xp: "4.0",
-    image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/61.png",
+    image:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/61.png",
   };
   return (
     <div className={classes.root}>
       <div className={classes.imgRow}>
-        <img
-          className={classes.img}
-          src={pokemon.image}
-        />
+        <img className={classes.img} src={pokemon.image} />
       </div>
-      
-      <TableContainer component={Paper}>
-        <Table className={classes.table} aria-label="customized table">
-          <TableBody>
-            <StyledTableRow key={pokemon.id}>
-              <StyledTableCell className={classes.cell} align="left">
-                <b>ID</b>
-              </StyledTableCell>
-              <StyledTableCell className={classes.cell} align="left">
-                {pokemon.id}
-              </StyledTableCell>
-            </StyledTableRow>
-            <StyledTableRow key={pokemon.id}>
-              <StyledTableCell className={classes.cell} align="left">
-                <b>Height</b>
-              </StyledTableCell>
-              <StyledTableCell className={classes.cell} align="left">
-                {pokemon.height}
-              </StyledTableCell>
-            </StyledTableRow>
-            <StyledTableRow key={pokemon.id}>
-              <StyledTableCell className={classes.cell} align="left">
-                <b>Weight</b>
-              </StyledTableCell>
-              <StyledTableCell className={classes.cell} align="left">
-                {pokemon.weight}
-              </StyledTableCell>
-            </StyledTableRow>
-          </TableBody>
-        </Table>
-      </TableContainer>
+
+      <div className={classes.divider}>
+        <TableContainer component={Paper} className={classes.tableContainer}>
+          <Table className={classes.table} aria-label="customized table">
+            <TableBody>
+              <StyledTableRow key={pokemon.id}>
+                <StyledTableCell className={classes.cell} align="left">
+                  <b>id</b>
+                </StyledTableCell>
+                <StyledTableCell className={classes.cell} align="left">
+                  {pokemon.id}
+                </StyledTableCell>
+              </StyledTableRow>
+              <StyledTableRow key={pokemon.id}>
+                <StyledTableCell className={classes.cell} align="left">
+                  <b>height</b>
+                </StyledTableCell>
+                <StyledTableCell className={classes.cell} align="left">
+                  {pokemon.height}
+                </StyledTableCell>
+              </StyledTableRow>
+              <StyledTableRow key={pokemon.id}>
+                <StyledTableCell className={classes.cell} align="left">
+                  <b>weight</b>
+                </StyledTableCell>
+                <StyledTableCell className={classes.cell} align="left">
+                  {pokemon.weight}
+                </StyledTableCell>
+              </StyledTableRow>
+            </TableBody>
+          </Table>
+        </TableContainer>
+
+        <TableContainer component={Paper} className={classes.tableContainer}>
+          <Table className={classes.table} aria-label="customized table">
+            <TableBody>
+              <StyledTableRow key={pokemon.id}>
+                <StyledTableCell className={classes.cell} align="left">
+                  <b>order</b>
+                </StyledTableCell>
+                <StyledTableCell className={classes.cell} align="left">
+                  {pokemon.order}
+                </StyledTableCell>
+              </StyledTableRow>
+              <StyledTableRow key={pokemon.id}>
+                <StyledTableCell className={classes.cell} align="left">
+                  <b>xp</b>
+                </StyledTableCell>
+                <StyledTableCell className={classes.cell} align="left">
+                  {pokemon.xp}
+                </StyledTableCell>
+              </StyledTableRow>
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </div>
     </div>
   );
 }
