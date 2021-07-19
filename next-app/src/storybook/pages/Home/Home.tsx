@@ -1,7 +1,6 @@
 import Header from "../../components/Header/Header";
 import PokemonPaginate from "../../components/PokemonPaginate/PokemonPaginate";
 import SearchPanel from "../../components/SearchPanel/SearchPanel";
-
 import Grid from "@material-ui/core/Grid";
 import { makeStyles} from '@material-ui/styles';
 
@@ -38,7 +37,6 @@ function Home() {
           </Grid>
         </Grid>
     </div>
-  
   );
 }
 

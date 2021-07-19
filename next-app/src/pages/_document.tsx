@@ -35,14 +35,16 @@ class MyDocument extends Document {
                 font-size: 16px;
                 margin: 0;
                 margin-bottom: 100px;
-                background-color: red;
               }
             `}
           </style>
         </Head>
         <body>
-          <Main />
+       
+          <Main/>
           <NextScript />
+   
+        
         </body>
       </Html>
     );

@@ -20,7 +20,7 @@ const IOSSwitch = withStyles((theme) => ({
       },
     },
     '&$focusVisible $thumb': {
-      color: 'darkgray',
+      color: '#52d869',
       border: '6px solid #fff',
     },
   },

@@ -49,7 +49,6 @@ const useStyles = makeStyles({
   tableRow: {
     padding: '10px',
     margin: 0,
-
   },
   imgRow: {
     display: "flex",
@@ -140,7 +139,7 @@ export default function PokeDetail({ pokemon }) {
           </Table>
         </TableContainer>
       </Card>
-      <div className={classes.imgRow}>
+      <div className={classes.imgRow} style={{paddingTop: 8}}>
         <img className={classes.img} src={pokemon.image} />
       </div>
     </div>

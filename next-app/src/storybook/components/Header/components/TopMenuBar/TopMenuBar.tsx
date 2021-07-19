@@ -4,7 +4,6 @@ import MenuIcon from "@material-ui/icons/Menu";
 import { makeStyles } from "@material-ui/core/styles";
 import IOSSwitch from "./IOSSwitch";
 import useReactiveVars from "../../../../../appState";
-import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {

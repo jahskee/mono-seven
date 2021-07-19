@@ -71,7 +71,7 @@ function Row(props) {
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
-        <TableCell className={classes.secondColumn} >
+        <TableCell className={classes.secondColumn} style={{padding:0, width: 35}}>
           <div className={classes.imgRow}>
           <img className={classes.img} src={row.image} />
           </div>
