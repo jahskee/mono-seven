@@ -42,9 +42,7 @@ const useRowStyles = makeStyles({
   imgRow: {
   //  display: "flex",
   //  justifyContent: "flex-end",
-    paddingRight: "0",
-    paddingLeft: '0',
-    paddingBottom: '0'
+    padding: 0,
   },
   img: {
     width: "20px",
