@@ -38,9 +38,12 @@ const useStyles = makeStyles({
     padding: "5",
   },
   cell: {
-    padding: '5px',
+    padding: '0',
     paddingLeft: "1rem",
     //paddingTop: "8px",
+  },
+  tableRow: {
+    padding: 0
   },
   imgRow: {
     display: "flex",
@@ -51,8 +54,9 @@ const useStyles = makeStyles({
     width: "70px",
     height: "70px",
     padding: "0",
-    marginTop: "1.2rem",
-    marginLeft: '1rem'
+    marginTop: "0.6rem",
+    marginLeft: '0.5rem',
+    marginRight: '1rem'
   },
   container: {
     display: "flex",
@@ -71,7 +75,7 @@ export default function PokeDetail({pokemon}) {
         <TableContainer className={classes.tableContainer}>
           <Table className={classes.table} aria-label="a dense table">
             <TableBody>
-            <StyledTableRow key={pokemon.id} className={classes.tableRow}>
+            <StyledTableRow key={pokemon.id}>
                 <StyledTableCell className={classes.cell} align="left">
                   <b>name</b>
                 </StyledTableCell>

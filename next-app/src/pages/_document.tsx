@@ -37,6 +37,15 @@ class MyDocument extends Document {
                 margin-bottom: 100px;
                 background-color: red;
               }
+              nav.MuiPagination-root {
+                margin: 0px !important;
+              }
+              td.MuiTableCell-body {
+                padding: 4px 4px 4px 0;
+              }
+              td.MuiTableCell-head {
+                padding: 4px 4px 4px 16px;
+              }
             `}
           </style>
         </Head>

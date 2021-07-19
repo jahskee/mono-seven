@@ -3,13 +3,21 @@ import PokemonTable from './components/pokemon-table/PokemonTable';
 import Pagination7 from './components/pagination7/Pagination7';
 import { makeStyles } from '@material-ui/styles';
 import { Box } from '@material-ui/core';
-import styles from './PokemonPaginate.module.css';
+import './PokemonPaginate.module.css';
+
+const pageControl = {
+  display: 'flex',
+  justifyContent: 'flex-end',
+}
 
 const useStyle = makeStyles(theme => ({
-  paginate: {
-    display: 'flex',
-    justifyContent: 'flex-end',
+  pageControlTop: {
+    ...pageControl,
     paddingBottom: '8px'
+  },
+  pageControlBottom: {
+    ...pageControl,
+    marginTop: '8px',
   }
 }));
 
@@ -30,12 +38,9 @@ function Table7() {
   const classes = useStyle();
   return(
     <div>
-      <Box className={classes.paginate}>
-        <Pagination7 />
-      </Box>
-     
+
       <PokemonTable rows={rows} />
-      <Box className={classes.paginate}>
+      <Box className={classes.pageControlBottom} >
         <Pagination7 />
       </Box>
    

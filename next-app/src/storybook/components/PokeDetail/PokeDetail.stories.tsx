@@ -17,5 +17,5 @@ Widget.args = {
     xp: "4.0",
     image:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/61.png",
-  };
+  }
 };

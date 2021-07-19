@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) => ({
     },
     marginTop: '0px'
   },
+  pagination: {
+    marginTop: '0px'
+  }
 }));
 
 export default function PaginationRounded() {

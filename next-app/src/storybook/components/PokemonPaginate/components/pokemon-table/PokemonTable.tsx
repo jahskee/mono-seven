@@ -22,21 +22,23 @@ const useRowStyles = makeStyles({
     },
   },
   tableCell: {
-    padding: '6px',
-    paddingRight: '1rem'
+    padding: '0px',
+    paddingRight: '1rem',
   },
   firstColumn: {
     width: '2.5rem',
-    paddingRight: '0'
+    paddingRight: '4px 4px 4px 16px'
   },
   secondColumn: {
     width: '3rem',
     paddingRight: '0',
+    paddingBottom: '0',
   },
   imgRow: {
   //  display: "flex",
   //  justifyContent: "flex-end",
-   // paddingRight: "0.5rem",
+    paddingRight: "0.5rem",
+    paddingLeft: '0'
   },
   img: {
     width: "25px",
