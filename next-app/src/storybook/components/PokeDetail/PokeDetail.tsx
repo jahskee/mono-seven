@@ -59,18 +59,9 @@ const useStyles = makeStyles({
   },
 });
 
-export default function PokeDetail() {
+export default function PokeDetail({pokemon}) {
   const classes = useStyles();
-  const pokemon = {
-    id: "61",
-    name: "Pokemon1",
-    height: "159",
-    weight: "6.0",
-    order: "24",
-    xp: "4.0",
-    image:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/61.png",
-  };
+
   return (
     <div className={classes.root}>
       <div className={classes.imgRow}>

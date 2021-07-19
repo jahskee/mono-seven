@@ -59,7 +59,7 @@ function Row(props) {
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box margin={1}>
-             <PokeDetail />
+             <PokeDetail pokemon={row}/>
             </Box>
           </Collapse>
         </TableCell>
