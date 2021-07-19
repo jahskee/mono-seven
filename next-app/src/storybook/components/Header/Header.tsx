@@ -1,12 +1,12 @@
 import AppBar7 from './components/TopMenuBar/TopMenuBar';
 import HeroImage from './components/HeroImage/HeroImage';
-import Card from '@material-ui/core/Card';
+import Paper from '@material-ui/core/Paper';
 function Header() {
   return (
-    <Card>
+    <Paper style={{padding: 0}}>
       <AppBar7 />
       <HeroImage />
-    </Card>
+    </Paper>
   )
 }
 

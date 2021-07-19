@@ -26,8 +26,7 @@ function HeroImage() {
   const classes = useStyles();
   return (
 
-
-        <div className={classes.heroImage}>
+        <div className={classes.heroImage} style={{padding: 0}}>
           <img src={logo} className={classes.logo} alt="7eleveln logo" />
         </div>
 

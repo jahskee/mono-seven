@@ -32,7 +32,7 @@ function AppBar7() {
   }
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" style={{padding: 0}}>
       <Toolbar className={classes.root}>
         <Box>
           <IconButton
