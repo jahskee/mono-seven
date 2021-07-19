@@ -29,6 +29,10 @@ const useRowStyles = makeStyles({
     width: '2.5rem',
     paddingRight: '0'
   },
+  secondColumn: {
+    width: '3rem',
+    paddingRight: '0',
+  },
   imgRow: {
   //  display: "flex",
   //  justifyContent: "flex-end",
@@ -59,25 +63,25 @@ function Row(props) {
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
-        <TableCell className={classes.tableCell} >
+        <TableCell className={`${classes.tableCell} ${classes.secondColumn}`} >
           <div className={classes.imgRow}>
           <img className={classes.img} src={row.image} />
           </div>
         </TableCell>
 
-        <TableCell component="th" scope="row" padding="none">
+        <TableCell component="th" scope="row" padding="none" align="left">
        
           {row.name}
         </TableCell>
-        <TableCell className={classes.tableCell} align="right">{row.height}</TableCell >
-        <TableCell className={classes.tableCell} align="right">{row.weight}</TableCell>
-        <TableCell className={classes.tableCell} align="right">{row.order}</TableCell>
+        <TableCell className={classes.tableCell} align="left">{row.height}</TableCell >
+        <TableCell className={classes.tableCell} align="left">{row.weight}</TableCell>
+        <TableCell className={classes.tableCell} align="left">{row.order}</TableCell>
 
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
-            <Box margin={1}>
+            <Box margin={1} paddingLeft={1}>
              <PokeDetail pokemon={row}/>
             </Box>
           </Collapse>
@@ -89,19 +93,7 @@ function Row(props) {
 
 Row.propTypes = {
   row: PropTypes.shape({
-    calories: PropTypes.number.isRequired,
-    carbs: PropTypes.number.isRequired,
-    fat: PropTypes.number.isRequired,
-    history: PropTypes.arrayOf(
-      PropTypes.shape({
-        amount: PropTypes.number.isRequired,
-        customerId: PropTypes.string.isRequired,
-        date: PropTypes.string.isRequired,
-      })
-    ).isRequired,
     name: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    protein: PropTypes.number.isRequired,
   }).isRequired,
 };
 
@@ -111,6 +103,12 @@ const useTableStyles = makeStyles({
   },
   table: {
    
+  },
+  tableCell: {
+    paddingLeft: '0',
+  },
+  firstCell: {
+    paddingLeft: '0',
   }
 });
 
@@ -123,11 +121,11 @@ export default function PokemonTable({rows}) {
           <TableHead>
             <TableRow>
               <TableCell />
-              <TableCell align="right"></TableCell>
-              <TableCell align="left">Name</TableCell>
-              <TableCell align="right">Height</TableCell>
-              <TableCell align="right">Weight</TableCell>
-              <TableCell align="right">Order</TableCell>
+              <TableCell ></TableCell>
+              <TableCell className={`${classes.firstCell} ${classes.tableCell}`} align="left">Name</TableCell>
+              <TableCell className={classes.tableCell} align="left">Height</TableCell>
+              <TableCell className={classes.tableCell} align="left">Weight</TableCell>
+              <TableCell className={classes.tableCell} align="left">Order</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
