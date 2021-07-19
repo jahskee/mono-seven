@@ -2,7 +2,7 @@ import React from "react";
 import PokemonTable from "./components/pokemon-table/PokemonTable";
 import Pagination7 from "./components/pagination7/Pagination7";
 import { makeStyles } from "@material-ui/styles";
-import { Box } from "@material-ui/core";
+import { Grid, Paper, Box } from "@material-ui/core";
 
 const pageControl = {
   display: "flex",
@@ -126,12 +126,16 @@ const rows = [
 function Table7() {
   const classes = useStyle();
   return (
-    <div>
-      <PokemonTable rows={rows} />
-      <Box className={classes.pageControlBottom}>
-        <Pagination7 />
-      </Box>
-    </div>
+    <Grid container>
+      <Grid item xs={12}>
+        <PokemonTable rows={rows} />
+      </Grid>
+      <Grid item xs={12}>
+        <Box className={classes.pageControlBottom} component={Paper}>
+          <Pagination7 />
+        </Box>
+      </Grid>
+    </Grid>
   );
 }
 

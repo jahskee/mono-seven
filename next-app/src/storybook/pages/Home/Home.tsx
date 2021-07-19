@@ -22,28 +22,31 @@ const useStyles = makeStyles({
 function Home() {
   const classes = useStyles();
   return (
-
-      <Grid container className={classes.main} spacing={1}    style={{
-        padding: "12px",
-        paddingTop: "10px",
-       // width: "1200px",
+    <Grid
+      container
+      className={classes.main}
+      spacing={1}
+      style={{
+        padding: "8px",
+        paddingTop: "8px",
+        // width: "1200px",
         margin: "0 auto",
         height: "100%",
         backgroundColor: "#555555",
-      }}>
-        <Grid item sm={12} xs={12} style={{ padding: 0, paddingBottom: "5px" }}>
-          <Header />
+      }}
+    >
+      <Grid item sm={12} xs={12} style={{ padding: 0, paddingBottom: "5px" }}>
+        <Header />
+      </Grid>
+      <Grid container className={classes.body} spacing={1}>
+        <Grid item md={5} xs={12}>
+          <SearchPanel />
         </Grid>
-        <Grid container className={classes.body} spacing={1}>
-          <Grid item md={5} xs={12}>
-            <SearchPanel />
-          </Grid>
-          <Grid item md={7} xs={12}>
-            <PokemonPaginate />
-          </Grid>
+        <Grid item md={7} xs={12}>
+          <PokemonPaginate />
         </Grid>
       </Grid>
- 
+    </Grid>
   );
 }
 

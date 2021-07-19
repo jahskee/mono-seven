@@ -6,11 +6,10 @@ import './styles.css'
 
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import useReactiveVars from "../appState";
+import { useDarkMode } from "../appState/appState";
 import { StylesProvider } from "@material-ui/core/styles";
 
 function MyApp({ Component, pageProps }) {
-  const { useDarkMode } = useReactiveVars();
   const { darkMode } = useDarkMode();
 
   const theme = React.useMemo(

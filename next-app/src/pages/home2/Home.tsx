@@ -10,7 +10,7 @@ import AppBar7 from '../../storybook/components/Header/components/TopMenuBar/Top
 import HeroImage from '../../storybook/components/Header/components/HeroImage/HeroImage';
 import Table7 from '../../storybook/components/PokemonPaginate/PokemonPaginate';
 
-import useReactiveVars from '../../appState';
+import useReactiveVars from '../../appState/appState';
 
 const getRecStart = (page, recordPerPage) => page * recordPerPage;
 
