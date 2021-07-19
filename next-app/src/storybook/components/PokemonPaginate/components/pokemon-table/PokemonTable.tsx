@@ -15,36 +15,42 @@ import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import PokeDetail from "../../../PokeDetail/PokeDetail";
 
+
+const tableCell ={
+  padding: '0px',
+ // paddingRight: '1rem',
+};
+
 const useRowStyles = makeStyles({
   root: {
     "& > *": {
       borderBottom: "unset",
     },
   },
-  tableCell: {
-    padding: '0px',
-    paddingRight: '1rem',
-  },
+  tableCell,
   firstColumn: {
+    ...tableCell,
     width: '2.5rem',
-    paddingRight: '4px 4px 4px 16px'
+    padding: '4px 0 4px 16px'
   },
   secondColumn: {
+    ...tableCell,
     width: '3rem',
-    paddingRight: '0',
-    paddingBottom: '0',
+    padding: '0',
+    //paddingBottom: '0',
   },
   imgRow: {
   //  display: "flex",
   //  justifyContent: "flex-end",
-    paddingRight: "0.5rem",
-    paddingLeft: '0'
+    paddingRight: "0",
+    paddingLeft: '0',
+    paddingBottom: '0'
   },
   img: {
-    width: "25px",
-    height: "25px",
+    width: "20px",
+    height: "20px",
     padding: "0",
-    //marginTop: "1.2rem",
+    marginTop: "10px",
   },
 });
 
@@ -56,7 +62,7 @@ function Row(props) {
   return (
     <React.Fragment>
       <TableRow className={classes.root}>
-        <TableCell padding="none"  className={`${classes.tableCell} ${classes.firstColumn}`} >
+        <TableCell padding="none"  className={classes.firstColumn} >
           <IconButton
             aria-label="expand row"
             size="small"
@@ -65,7 +71,7 @@ function Row(props) {
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
-        <TableCell className={`${classes.tableCell} ${classes.secondColumn}`} >
+        <TableCell className={classes.secondColumn} >
           <div className={classes.imgRow}>
           <img className={classes.img} src={row.image} />
           </div>
@@ -99,6 +105,9 @@ Row.propTypes = {
   }).isRequired,
 };
 
+const tableCell2 = {
+  paddingLeft: '0',
+}
 const useTableStyles = makeStyles({
   tableContainer: {
     marginTop: "0",
@@ -106,10 +115,9 @@ const useTableStyles = makeStyles({
   table: {
    
   },
-  tableCell: {
-    paddingLeft: '0',
-  },
+  tableCell: tableCell2,
   firstCell: {
+    ...tableCell,
     paddingLeft: '0',
   }
 });
@@ -124,7 +132,7 @@ export default function PokemonTable({rows}) {
             <TableRow>
               <TableCell />
               <TableCell ></TableCell>
-              <TableCell className={`${classes.firstCell} ${classes.tableCell}`} align="left">Name</TableCell>
+              <TableCell className={classes.firstCell} align="left">Name</TableCell>
               <TableCell className={classes.tableCell} align="left">Height</TableCell>
               <TableCell className={classes.tableCell} align="left">Weight</TableCell>
               <TableCell className={classes.tableCell} align="left">Order</TableCell>

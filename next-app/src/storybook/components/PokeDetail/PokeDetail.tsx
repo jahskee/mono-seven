@@ -38,8 +38,8 @@ const useStyles = makeStyles({
     padding: "5",
   },
   cell: {
-    padding: '0',
-    paddingLeft: "1rem",
+   
+    paddingLeft: '16px'
     //paddingTop: "8px",
   },
   tableRow: {

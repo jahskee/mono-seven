@@ -38,10 +38,10 @@ class MyDocument extends Document {
                 background-color: red;
               }
               nav.MuiPagination-root {
-                margin: 0px !important;
+                margin: 0px;
               }
               td.MuiTableCell-body {
-                padding: 4px 4px 4px 0;
+                padding: 4px 0 4px 0;
               }
               td.MuiTableCell-head {
                 padding: 4px 4px 4px 16px;
