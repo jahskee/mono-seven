@@ -52,8 +52,6 @@ function graphQueryGetPokemons() {
   return { getPagedPokemons, called, loading, error, data };
 }
 
-
-
 function PokemonPaginate() {
   const classes = useStyle();
   const query1 = graphQueryGetPokemons();
@@ -64,9 +62,8 @@ function PokemonPaginate() {
   if (!query1.called) {
     query1.getPagedPokemons();
   }
-  //*const data1 = getPagedPokemons();
+
   if (query1.data) {
-    //const pokemons = data.pagedPokemons;
     return (
       <Grid container>
         <Grid item xs={12}>
