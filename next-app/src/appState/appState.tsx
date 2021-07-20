@@ -1,23 +1,15 @@
-import { makeVar, useReactiveVar } from '@apollo/client';
+import { makeVar, useReactiveVar } from "@apollo/client";
 
 const setDarkMode = makeVar(true);
 export const useDarkMode = () => {
-  const darkMode= useReactiveVar(setDarkMode);
+  const darkMode = useReactiveVar(setDarkMode);
   return { darkMode, setDarkMode };
 };
 
-interface PageInfo {
-  selectedPage: number,
-  pageCount: number,
-}
 
-interface UsePageInfo {
-  pageInfo: PageInfo,
-  setPageInfo: Function,
-}
 
-const setPageInfo = makeVar({selectedPage: 0, pageCount:0});
-export const usePageInfo = function(): UsePageInfo {
+const setPageInfo = makeVar({ selectedPage: 0, pageCount: 0 });
+export const usePageInfo = function() {
   const pageInfo = useReactiveVar(setPageInfo);
   return { pageInfo, setPageInfo };
 };
