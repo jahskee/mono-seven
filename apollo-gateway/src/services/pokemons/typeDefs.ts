@@ -13,7 +13,7 @@ const typeDefs = gql`
   }
   extend type Query {
     pokemon(id: ID!): Pokemon!
-    pokemonPage(offset: Int, limit: Int): [Pokemon]
+    pagedPokemons(offset: Int, limit: Int): [Pokemon]
     pokemons: [Pokemon!]!
     allPokemons: [Pokemon!]!
   }

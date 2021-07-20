@@ -5,9 +5,6 @@
     },
     {
       "path": "next-app"
-    },
-    {
-      "path": "next-app/src/storybook"
     }
   ],
   "settings": {}

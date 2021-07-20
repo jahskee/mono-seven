@@ -6,10 +6,20 @@ export const useDarkMode = () => {
   return { darkMode, setDarkMode };
 };
 
-const setPage = makeVar(0);
-export const usePage = () => {
-  const page = useReactiveVar(setPage);
-  return { page, setPage };
+interface PageInfo {
+  selectedPage: number,
+  pageCount: number,
+}
+
+interface UsePageInfo {
+  pageInfo: PageInfo,
+  setPageInfo: Function,
+}
+
+const setPageInfo = makeVar({selectedPage: 0, pageCount:0});
+export const usePageInfo = function(): UsePageInfo {
+  const pageInfo = useReactiveVar(setPageInfo);
+  return { pageInfo, setPageInfo };
 };
 
 const setPokemonList = makeVar([]);

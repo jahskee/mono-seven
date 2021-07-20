@@ -13,7 +13,7 @@ const resolvers = {
     pokemons: (parent:unknown, args: any, context:unknown, info: unknown) => {
       return db.pokemons;
     },
-    pokemonPage: (parent:unknown, {offset, limit}: any, context:unknown, info: unknown) => {
+    pagedPokemons: (parent:unknown, {offset, limit}: any, context:unknown, info: unknown) => {
       const end = offset + limit;
       return db.pokemons.slice(offset, end );
     },
