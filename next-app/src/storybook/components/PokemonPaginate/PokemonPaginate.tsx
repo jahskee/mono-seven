@@ -41,7 +41,7 @@ function PokemonPaginate() {
   const query1 = graphQueryGetPokemons();
 
   if (query1.called && query1.loading) return <div>Loading...</div>;
-  if (query1.error) return `Error! ${query1.error}`;
+  if (query1.error) return <div>`Error! ${query1.error}`</div>;
 
   if (!query1.called) {
     query1.getPagedPokemons();

@@ -1,13 +1,13 @@
-import Table7 from './PokemonPaginate';
+import PokemonPaginate from './PokemonPaginate';
 import Queries from '../../_queries/queries';
 import DataMocks from '../../_data_mocks/pokemons';
 
 export default {
   title: "7-Eleven/Components/PokemonPaginate",
-  component: Table7,
+  component: PokemonPaginate,
 }
 
-const Template = (args) => (<Table7  {...args} />);
+const Template = (args) => (<PokemonPaginate {...args} />);
 export const Widget = Template.bind({});
 Widget.args = {};
 

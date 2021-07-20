@@ -1,9 +1,10 @@
+import React from 'react';
 import Header from "../../components/Header/Header";
 import PokemonPaginate from "../../components/PokemonPaginate/PokemonPaginate";
 import SearchPanel from "../../components/SearchPanel/SearchPanel";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
-import { useDarkMode } from '../../../appState/appState';
+import { useDarkMode } from "../../../appState/appState";
 
 const useStyles = makeStyles({
   root: {
@@ -30,7 +31,7 @@ function Home() {
       className={classes.main}
       spacing={1}
       style={{
-        display: 'flex',
+        display: "flex",
         padding: "8px",
         paddingTop: "8px",
         // width: "1200px",
@@ -38,19 +39,19 @@ function Home() {
         alignItems: "space-between",
         margin: "0 auto",
         minHeight: "100vh",
-        backgroundColor: darkMode? "#555555": 'lightgray',
+        backgroundColor: darkMode ? "#555555" : "lightgray",
       }}
     >
       <Grid item sm={12} xs={12} style={{ padding: 0, paddingBottom: "5px" }}>
         <Header />
         <Grid container className={classes.body} spacing={1}>
-        <Grid item md={7} xs={12}>
-          <PokemonPaginate />
+          <Grid item md={5} xs={12}>
+            <SearchPanel />
+          </Grid>
+          <Grid item md={7} xs={12}>
+            <PokemonPaginate />
+          </Grid>
         </Grid>
-        <Grid item md={5} xs={12}>
-          <SearchPanel />
-        </Grid>
-      </Grid>
       </Grid>
     </Grid>
   );
