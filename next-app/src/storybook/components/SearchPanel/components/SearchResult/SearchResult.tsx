@@ -73,7 +73,7 @@ function Row({pokemon}) {
 }
 
 Row.propTypes = {
-  row: PropTypes.shape({
+  pokemon: PropTypes.shape({
    name: PropTypes.string.isRequired,
   }).isRequired,
 };
