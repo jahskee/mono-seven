@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-// Table Style
+// -----------  Table Style ------------
 const tableCell2 = {
   paddingLeft: '0',
 };
@@ -17,7 +17,7 @@ export const useTableStyles = makeStyles({
   },
 });
 
-// Row Style
+// ------------- Row Style -------------
 const tableCell = {
   padding: '0px',
 };

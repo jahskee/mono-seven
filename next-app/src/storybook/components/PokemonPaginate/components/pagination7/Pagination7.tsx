@@ -32,9 +32,10 @@ export default function PaginationRounded() {
   const classes = useStyles();
   const { pageInfo, setPageInfo } = usePageInfo();
  
-
   function handleChange( event , selectedPage) {
+    event.preventDefault();
     setPageInfo({...pageInfo, selectedPage});
+
   }
 
   return (
