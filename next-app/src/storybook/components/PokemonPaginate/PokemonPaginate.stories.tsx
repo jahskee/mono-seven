@@ -24,7 +24,7 @@ Widget.parameters = {
         },
         result: {
           data: {
-            pagedPokemons: DataMocks.pokemons,
+            pagedPokemons: DataMocks.pokemons.slice(0,10),
           },
         },
       },
