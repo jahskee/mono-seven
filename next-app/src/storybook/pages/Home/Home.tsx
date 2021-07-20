@@ -44,11 +44,11 @@ function Home() {
       <Grid item sm={12} xs={12} style={{ padding: 0, paddingBottom: "5px" }}>
         <Header />
         <Grid container className={classes.body} spacing={1}>
-        <Grid item md={5} xs={12}>
-          <SearchPanel />
-        </Grid>
         <Grid item md={7} xs={12}>
           <PokemonPaginate />
+        </Grid>
+        <Grid item md={5} xs={12}>
+          <SearchPanel />
         </Grid>
       </Grid>
       </Grid>
