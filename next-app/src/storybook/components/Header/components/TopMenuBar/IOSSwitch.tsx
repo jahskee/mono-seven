@@ -1,7 +1,7 @@
 import Switch from '@material-ui/core/Switch';
-import { withStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 
-const IOSSwitch = withStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     width: 42,
     height: 26,
@@ -37,8 +37,11 @@ const IOSSwitch = withStyles((theme) => ({
   },
   checked: {},
   focusVisible: {},
-}))(({ classes, ...props }) => {
+}));
 
+
+const IOSSwitch = ({...props }) => {
+  const classes = useStyles();
   return (
     <Switch
       focusVisibleClassName={classes.focusVisible}
@@ -53,6 +56,6 @@ const IOSSwitch = withStyles((theme) => ({
       {...props}
     />
   );
-});
+}
 
 export default IOSSwitch;

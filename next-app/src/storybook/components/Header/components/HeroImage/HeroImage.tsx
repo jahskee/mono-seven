@@ -1,6 +1,5 @@
 import { Paper, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import logo from "./image/7eleven.png";
 
 const useStyles = makeStyles((theme) => ({
   heroImage: {
@@ -18,18 +17,20 @@ const useStyles = makeStyles((theme) => ({
     float: "right",
     width: "7rem",
     height: "12rem",
-    padding: "5rem 1rem 0.4rem",
+    padding: "2.5rem 1rem 2.5rem",
   },
 }));
 
 function HeroImage() {
   const classes = useStyles();
   return (
-
-        <div className={classes.heroImage} style={{padding: 0}}>
-          <img src={logo} className={classes.logo} alt="7eleveln logo" />
-        </div>
-
+    <div className={classes.heroImage} style={{ padding: 0 }}>
+      <img
+        src="/images/7eleven.png"
+        className={classes.logo}
+        alt="7eleveln logo"
+      />
+    </div>
   );
 }
 
