@@ -110,5 +110,6 @@ const pokemons = [
       'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/16.png',
   },
 ];
-
-export default pokemons;
+export default {
+  pokemons,
+};

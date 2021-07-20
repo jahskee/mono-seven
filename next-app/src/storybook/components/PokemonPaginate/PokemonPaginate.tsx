@@ -3,9 +3,9 @@ import PokemonTable from "./components/pokemon-table/PokemonTable";
 import Pagination7 from "./components/pagination7/Pagination7";
 import { makeStyles } from "@material-ui/styles";
 import { Grid, Paper, Box } from "@material-ui/core";
-import pokemons from "../../_data_mocks/pokemons";
-import { gql, useQuery, useLazyQuery } from "@apollo/client";
+import { gql, useLazyQuery } from "@apollo/client";
 import { usePageInfo } from "../../../appState/appState";
+import Queries from '../../_queries/queries';
 
 const pageControl = {
   display: "flex",
@@ -25,27 +25,11 @@ const useStyle = makeStyles((theme) => ({
 
 function graphQueryGetPokemons() {
   const { pageInfo } = usePageInfo();
-
-  const GET_PAGED_POKEMONS = gql`
-    query getPagedPokemons($offset: Int, $limit: Int) {
-      pagedPokemons(offset: $offset, limit: $limit) {
-        id
-        name
-        weight
-        accuracy
-        power
-        generation
-        xp
-        image
-      }
-    }
-  `;
-
   const recStart = (pageInfo.selectedPage - 1) * pageInfo.limit;
   const [
     getPagedPokemons,
     { called, loading, error, data },
-  ] = useLazyQuery(GET_PAGED_POKEMONS, {
+  ] = useLazyQuery(Queries.GET_PAGED_POKEMONS, {
     variables: { offset: recStart, limit: pageInfo.limit },
   });
 

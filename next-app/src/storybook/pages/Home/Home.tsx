@@ -3,7 +3,7 @@ import PokemonPaginate from "../../components/PokemonPaginate/PokemonPaginate";
 import SearchPanel from "../../components/SearchPanel/SearchPanel";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
-import { useDarkMode } from '../../../appState/appState';
+import { useAppConfig, useDarkMode } from '../../../appState/appState';
 
 const useStyles = makeStyles({
   root: {
@@ -23,6 +23,7 @@ const useStyles = makeStyles({
 function Home() {
   const classes = useStyles();
   const { darkMode } = useDarkMode();
+  const { setAppConfig } = useAppConfig();
 
   return (
     <Grid
