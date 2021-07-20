@@ -2,7 +2,7 @@ import SearchBox from './components/SearchBox/SearchBox';
 import SearchResult from './components/SearchResult/SearchResult';
 import { makeStyles } from '@material-ui/styles';
 import { Grid } from '@material-ui/core';
-import pokemons from '../../../_data/data_pokemon'
+import data_pokemons from '../../../_data/data_pokemon'
 
 const useStyles = makeStyles({
   seachResult: {
@@ -18,7 +18,7 @@ function SearchPanel() {
         <SearchBox />
       </Grid>
       <Grid item xs={12}>
-        <SearchResult rows={pokemons}/>
+        <SearchResult pokemons={data_pokemons}/>
       </Grid>
     </Grid>
   )

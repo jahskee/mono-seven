@@ -13,12 +13,18 @@ import Paper from "@material-ui/core/Paper";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import PokeDetail from "../../../PokeDetail/PokeDetail";
+import ImageCell from "../../../ImageCell/ImageCell";
 
 const useRowStyles = makeStyles({
   root: {
     "& > *": {
       borderBottom: "unset",
     },
+  },
+  secondColumn: {
+    width: '3rem',
+    padding: '0',
+    paddingLeft: 0,
   },
   tableCell: {
     padding: '1px',
@@ -29,8 +35,8 @@ const useRowStyles = makeStyles({
   }
 });
 
-function Row(props) {
-  const { row } = props;
+function Row({pokemon}) {
+ 
   const [open, setOpen] = React.useState(false);
   const classes = useRowStyles();
 
@@ -46,15 +52,18 @@ function Row(props) {
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
+        <TableCell className={classes.secondColumn} style={{padding:0, width: 35}}>
+          <ImageCell pokemon={pokemon} />
+        </TableCell>
         <TableCell component="th" scope="row" padding="none" className={classes.tableCell}>
-          {row.name}
+          {pokemon.name}
         </TableCell>
       </TableRow>
       <TableRow>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box margin={1}>
-              <PokeDetail pokemon={row}/>
+              <PokeDetail pokemon={pokemon}/>
             </Box>
           </Collapse>
         </TableCell>
@@ -75,15 +84,15 @@ const useTableStyles = makeStyles({
   }
 });
 
-export default function PokemonTable({rows}) {
+export default function PokemonTable({pokemons}) {
   const classes = useTableStyles();
   return (
     <div className={classes.tableContainer}>
       <TableContainer component={Paper}>
         <Table aria-label="collapsible table">
           <TableBody>
-            {rows.map((row) => (
-              <Row key={row.name} row={row} />
+            {pokemons.map((pokemon) => (
+              <Row key={pokemon.name} pokemon={pokemon} />
             ))}
           </TableBody>
         </Table>
