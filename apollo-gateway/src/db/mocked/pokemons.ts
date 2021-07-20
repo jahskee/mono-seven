@@ -1,6 +1,6 @@
 const pokemons = [
   {
-    id: '10',
+    id: '1',
     name: 'Poke1',
     weight: '120',
     accuracy: '88',
@@ -8,10 +8,10 @@ const pokemons = [
     generation: 'gen-x',
     xp: '60.34',
     image:
-      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10.png',
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
   },
   {
-    id: '12',
+    id: '2',
     name: 'Poke2',
     weight: '160',
     accuracy: '75',
@@ -19,10 +19,10 @@ const pokemons = [
     generation: 'gen-i',
     xp: '70.42',
     image:
-      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/12.png',
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png',
   },
   {
-    id: '63',
+    id: '3',
     name: 'Poke3',
     weight: '202',
     accuracy: '95',
@@ -30,7 +30,7 @@ const pokemons = [
     generation: 'gen-b',
     xp: '84.59',
     image:
-      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/63.png',
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png',
   },
   {
     id: '4',
@@ -99,7 +99,7 @@ const pokemons = [
       'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png',
   },
   {
-    id: '16',
+    id: '10',
     name: 'Poke10',
     weight: '189',
     accuracy: '96',
@@ -107,7 +107,271 @@ const pokemons = [
     generation: 'gen-v',
     xp: '81.00',
     image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10.png',
+  },
+  {
+    id: '11',
+    name: 'Poke11',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/11.png',
+  },
+  {
+    id: '12',
+    name: 'Poke12',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/12.png',
+  },
+  {
+    id: '13',
+    name: 'Poke13',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/13.png',
+  },
+  {
+    id: '14',
+    name: 'Poke14',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/14.png',
+  },
+  {
+    id: '15',
+    name: 'Poke15',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/15.png',
+  },
+  {
+    id: '16',
+    name: 'Poke16',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
       'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/16.png',
+  },
+  {
+    id: '17',
+    name: 'Poke17',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/17.png',
+  },
+  {
+    id: '18',
+    name: 'Poke18',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/18.png',
+  },
+  {
+    id: '19',
+    name: 'Poke19',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/19.png',
+  },
+  {
+    id: '20',
+    name: 'Poke20',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/20.png',
+  },
+  {
+    id: '21',
+    name: 'Poke21',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/21.png',
+  },
+  {
+    id: '22',
+    name: 'Poke22',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/22.png',
+  },
+  {
+    id: '23',
+    name: 'Poke23',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/23.png',
+  },
+  {
+    id: '24',
+    name: 'Poke24',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/24.png',
+  },
+  {
+    id: '25',
+    name: 'Poke25',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png',
+  },
+  {
+    id: '26',
+    name: 'Poke26',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png',
+  },
+  {
+    id: '27',
+    name: 'Poke27',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/27.png',
+  },
+  {
+    id: '28',
+    name: 'Poke28',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/28.png',
+  },
+  {
+    id: '29',
+    name: 'Poke29',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/29.png',
+  },
+  {
+    id: '30',
+    name: 'Poke30',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/30.png',
+  },
+  {
+    id: '31',
+    name: 'Poke31',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/31.png',
+  },
+  {
+    id: '32',
+    name: 'Poke32',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/32.png',
+  },
+  {
+    id: '33',
+    name: 'Poke33',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/33.png',
+  },
+  {
+    id: '34',
+    name: 'Poke34',
+    weight: '189',
+    accuracy: '96',
+    power: '24',
+    generation: 'gen-v',
+    xp: '81.00',
+    image:
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/34.png',
   },
 ];
 

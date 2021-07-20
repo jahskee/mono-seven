@@ -3,8 +3,9 @@ import PokemonTable from "./components/pokemon-table/PokemonTable";
 import Pagination7 from "./components/pagination7/Pagination7";
 import { makeStyles } from "@material-ui/styles";
 import { Grid, Paper, Box } from "@material-ui/core";
-import pokemons from '../../_data_mocks/pokemons';
-import { gql, useLazyQuery } from '@apollo/client';
+import pokemons from "../../_data_mocks/pokemons";
+import { gql, useQuery, useLazyQuery } from "@apollo/client";
+import { usePageInfo } from "../../../appState/appState";
 
 const pageControl = {
   display: "flex",
@@ -22,40 +23,54 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-const GET_PAGED_POKEMONS = gql`
-query getPagedPokemons($offset: Int, $limit: Int) {
-  pagedPokemons(offset:$offset, limit:$limit) {
-    id
-    name
-    weight
-    accuracy
-    power
-    generation
-    xp
-    image
-  }
+function graphQueryGetPokemons() {
+  const { pageInfo } = usePageInfo();
+
+  const GET_PAGED_POKEMONS = gql`
+    query getPagedPokemons($offset: Int, $limit: Int) {
+      pagedPokemons(offset: $offset, limit: $limit) {
+        id
+        name
+        weight
+        accuracy
+        power
+        generation
+        xp
+        image
+      }
+    }
+  `;
+
+  const recStart = (pageInfo.selectedPage - 1) * pageInfo.limit;
+  const [
+    getPagedPokemons,
+    { called, loading, error, data },
+  ] = useLazyQuery(GET_PAGED_POKEMONS, {
+    variables: { offset: recStart, limit: pageInfo.limit },
+  });
+
+  return { getPagedPokemons, called, loading, error, data };
 }
-`;
+
+
 
 function PokemonPaginate() {
   const classes = useStyle();
-  const [getPagedPokemons, { called, loading, error, data }] = useLazyQuery(
-    GET_PAGED_POKEMONS, { variables: {offset: 0, limit: 4}}
-  );
+  const query1 = graphQueryGetPokemons();
 
-  if (called && loading) return <div>Loading...</div>;
-  if (error) return `Error! ${error}`;
-  
-  if (!called) {
-    getPagedPokemons();
+  if (query1.called && query1.loading) return <div>Loading...</div>;
+  if (query1.error) return `Error! ${query1.error}`;
+
+  if (!query1.called) {
+    query1.getPagedPokemons();
   }
   //*const data1 = getPagedPokemons();
-  if (data) {
+  if (query1.data) {
     //const pokemons = data.pagedPokemons;
     return (
       <Grid container>
         <Grid item xs={12}>
-          <PokemonTable pokemons={data.pagedPokemons} />
+          <PokemonTable pokemons={query1.data.pagedPokemons} />
         </Grid>
         <Grid item xs={12}>
           <Box className={classes.pageControlBottom} component={Paper}>
@@ -65,7 +80,7 @@ function PokemonPaginate() {
       </Grid>
     );
   }
-  return <div>Loading...</div>
+  return <div>Loading...</div>;
 }
 
 export default PokemonPaginate;

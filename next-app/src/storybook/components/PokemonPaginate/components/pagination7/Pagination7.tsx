@@ -21,11 +21,13 @@ export default function PaginationRounded() {
   
   function handleChange( _ , selectedPage) {
     setPageInfo({...pageInfo, selectedPage});
+    console.log(selectedPage, pageInfo);
+    console.log('test')
   }
 
   return (
     <div className={classes.root}>
-      <Pagination count={3} variant="outlined" shape="rounded"  onChange={handleChange} />
+      <Pagination count={3} variant="outlined" shape="rounded" defaultPage={6} onChange={handleChange} />
     </div>
   );
 }

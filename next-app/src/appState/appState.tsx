@@ -8,7 +8,7 @@ export const useDarkMode = () => {
 
 
 
-const setPageInfo = makeVar({ selectedPage: 0, pageCount: 0 });
+const setPageInfo = makeVar({ selectedPage: 1, limit: 10, pageCount: 34 });
 export const usePageInfo = function() {
   const pageInfo = useReactiveVar(setPageInfo);
   return { pageInfo, setPageInfo };
