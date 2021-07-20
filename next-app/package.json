@@ -23,6 +23,7 @@
     "@material-ui/styles": "^4.11.4",
     "@storybook/addon-knobs": "^6.3.0",
     "graphql": "^15.5.1",
+    "material-ui-search-bar": "^1.0.0",
     "next": "^10.0.0",
     "next-images": "^1.8.1",
     "prop-types": "^15.7.2",
