@@ -1,6 +1,6 @@
 const pokemons = [
   {
-    id: '61',
+    id: '10',
     name: 'Poke1',
     weight: '120',
     accuracy: '88',
@@ -11,7 +11,7 @@ const pokemons = [
       'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10.png',
   },
   {
-    id: '61',
+    id: '12',
     name: 'Poke2',
     weight: '160',
     accuracy: '75',
@@ -22,7 +22,7 @@ const pokemons = [
       'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/12.png',
   },
   {
-    id: '61',
+    id: '63',
     name: 'Poke3',
     weight: '202',
     accuracy: '95',
@@ -33,7 +33,7 @@ const pokemons = [
       'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/63.png',
   },
   {
-    id: '61',
+    id: '4',
     name: 'Poke4',
     weight: '180',
     accuracy: '78',
@@ -44,7 +44,7 @@ const pokemons = [
       'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png',
   },
   {
-    id: '61',
+    id: '5',
     name: 'Poke5',
     weight: '196',
     accuracy: '98',
@@ -55,7 +55,7 @@ const pokemons = [
       'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png',
   },
   {
-    id: '61',
+    id: '6',
     name: 'Poke6',
     weight: '206',
     accuracy: '99',
@@ -66,7 +66,7 @@ const pokemons = [
       'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png',
   },
   {
-    id: '61',
+    id: '7',
     name: 'Poke7',
     weight: '210',
     accuracy: '89',
@@ -77,7 +77,7 @@ const pokemons = [
       'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png',
   },
   {
-    id: '61',
+    id: '8',
     name: 'Poke8',
     weight: '201',
     accuracy: '85',
@@ -88,7 +88,7 @@ const pokemons = [
       'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png',
   },
   {
-    id: '61',
+    id: '9',
     name: 'Poke9',
     weight: '198',
     accuracy: '94',
@@ -99,7 +99,7 @@ const pokemons = [
       'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png',
   },
   {
-    id: '61',
+    id: '16',
     name: 'Poke10',
     weight: '189',
     accuracy: '96',
