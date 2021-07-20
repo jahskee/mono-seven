@@ -52,8 +52,6 @@ function Home() {
         </Grid>
       </Grid>
       </Grid>
-    
-   
     </Grid>
   );
 }
