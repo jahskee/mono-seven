@@ -58,7 +58,7 @@ function Row({ pokemon }) {
 
   return (
     <React.Fragment>
-      <TableRow className={classes.root}>
+      <TableRow key={1} className={classes.root}>
         <TableCell padding="none"  className={classes.firstColumn} >
           <IconButton
             aria-label="expand row"
@@ -83,7 +83,7 @@ function Row({ pokemon }) {
         <TableCell className={classes.tableCell} align="left">{pokemon.xp}</TableCell>
 
       </TableRow>
-      <TableRow>
+      <TableRow key={2}>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box margin={1} paddingLeft={1}>
@@ -126,7 +126,7 @@ export default function PokemonTable({pokemons}) {
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="collapsible table">
           <TableHead>
-            <TableRow>
+            <TableRow key={1}>
               <TableCell />
               <TableCell ></TableCell>
               <TableCell className={classes.firstCell} align="left">Name</TableCell>

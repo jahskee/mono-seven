@@ -42,7 +42,7 @@ function Row({pokemon}) {
 
   return (
     <React.Fragment>
-      <TableRow className={classes.root}>
+      <TableRow key={1} className={classes.root}>
         <TableCell padding="none" className={`${classes.firstColumn} ${classes.tableCell}`}>
           <IconButton
             aria-label="expand row"
@@ -59,7 +59,7 @@ function Row({pokemon}) {
           {pokemon.name}
         </TableCell>
       </TableRow>
-      <TableRow>
+      <TableRow key={2} >
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box margin={1}>

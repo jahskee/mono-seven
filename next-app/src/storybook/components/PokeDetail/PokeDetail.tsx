@@ -79,7 +79,7 @@ export default function PokeDetail({ pokemon }) {
         <TableContainer className={classes.tableContainer} component={Paper} style={{padding: '2px'}}>
           <Table className={classes.table} aria-label="a dense table">
             <TableBody>
-              <StyledTableRow key={pokemon.id}>
+              <StyledTableRow key={1}>
                 <StyledTableCell className={classes.cell}>
                  <b>name</b>
                 </StyledTableCell>
@@ -88,7 +88,7 @@ export default function PokeDetail({ pokemon }) {
                 </StyledTableCell>
               </StyledTableRow>
 
-              <StyledTableRow key={pokemon.id}>
+              <StyledTableRow key={2}>
                 <StyledTableCell className={classes.cell}>
                   <b>weight</b>
                 </StyledTableCell>
@@ -96,7 +96,7 @@ export default function PokeDetail({ pokemon }) {
                   {pokemon.weight+" lbs"}
                 </StyledTableCell>
               </StyledTableRow>
-              <StyledTableRow key={pokemon.id}>
+              <StyledTableRow key={3}>
                 <StyledTableCell className={classes.cell}>
                   <b>accuracy</b>
                 </StyledTableCell>
@@ -111,7 +111,7 @@ export default function PokeDetail({ pokemon }) {
         <TableContainer component={Paper} className={classes.tableContainer} style={{padding: '2px'}}>
           <Table className={classes.table} aria-label="customized table">
             <TableBody>
-              <StyledTableRow key={pokemon.id}>
+              <StyledTableRow key={4}>
                 <StyledTableCell className={classes.cell} align="left">
                   <b>power</b>
                 </StyledTableCell>
@@ -119,7 +119,7 @@ export default function PokeDetail({ pokemon }) {
                   {pokemon.power}
                 </StyledTableCell>
               </StyledTableRow>
-              <StyledTableRow key={pokemon.id}>
+              <StyledTableRow key={5}>
                 <StyledTableCell className={classes.cell} align="left">
                   <b>generation</b>
                 </StyledTableCell>
@@ -127,7 +127,7 @@ export default function PokeDetail({ pokemon }) {
                   {pokemon.generation}
                 </StyledTableCell>
               </StyledTableRow>
-              <StyledTableRow key={pokemon.id}>
+              <StyledTableRow key={6}>
                 <StyledTableCell className={classes.cell} align="left">
                   <b>experience</b>
                 </StyledTableCell>
