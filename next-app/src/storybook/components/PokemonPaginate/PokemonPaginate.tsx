@@ -3,7 +3,7 @@ import PokemonTable from "./components/pokemon-table/PokemonTable";
 import Pagination7 from "./components/pagination7/Pagination7";
 import { makeStyles } from "@material-ui/styles";
 import { Grid, Paper, Box } from "@material-ui/core";
-import pokemons from '../../../_data_mocks/pokemons';
+import pokemons from '../../_data_mocks/pokemons';
 
 const pageControl = {
   display: "flex",

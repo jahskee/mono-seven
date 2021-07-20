@@ -1,5 +1,5 @@
 import PokemonTable from "./PokemonTable";
-import pokemons from '../../../../../_data_mocks/pokemons';
+import pokemons from '../../../../_data_mocks/pokemons';
 export default {
   title: "7-Eleven/Components/PokemonPaginate/Components/PokemonTable",
   component: PokemonTable,
