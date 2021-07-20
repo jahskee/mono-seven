@@ -13,6 +13,10 @@ const resolvers = {
     pokemons: (parent:unknown, args: any, context:unknown, info: unknown) => {
       return db.pokemons;
     },
+    pokemonPage: (parent:unknown, {offset, limit}: any, context:unknown, info: unknown) => {
+      const end = offset + limit;
+      return db.pokemons.slice(offset, end );
+    },
     pokemon: (parent:unknown, { id }: {id: string}, context: unknown, info: unknown) => {
       return db.pokemons.find( (item: any) => item.id === id );
     },
