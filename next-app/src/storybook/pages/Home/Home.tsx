@@ -3,6 +3,7 @@ import PokemonPaginate from "../../components/PokemonPaginate/PokemonPaginate";
 import SearchPanel from "../../components/SearchPanel/SearchPanel";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
+import { useDarkMode } from '../../../appState/appState';
 
 const useStyles = makeStyles({
   root: {
@@ -21,6 +22,8 @@ const useStyles = makeStyles({
 
 function Home() {
   const classes = useStyles();
+  const { darkMode } = useDarkMode();
+
   return (
     <Grid
       container
@@ -32,7 +35,7 @@ function Home() {
         // width: "1200px",
         margin: "0 auto",
         height: "100%",
-        backgroundColor: "#555555",
+        backgroundColor: darkMode? "#555555": 'lightgray',
       }}
     >
       <Grid item sm={12} xs={12} style={{ padding: 0, paddingBottom: "5px" }}>
