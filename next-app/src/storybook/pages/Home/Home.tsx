@@ -16,7 +16,7 @@ const useStyles = makeStyles({
     minWidth: "300px",
   },
   body: {
-    paddingTop: "4px",
+    paddingTop: "8px",
   },
 });
 
@@ -30,18 +30,20 @@ function Home() {
       className={classes.main}
       spacing={1}
       style={{
+        display: 'flex',
         padding: "8px",
         paddingTop: "8px",
         // width: "1200px",
+        justifyContent: "space-around",
+        alignItems: "space-between",
         margin: "0 auto",
-        height: "100%",
+        minHeight: "100vh",
         backgroundColor: darkMode? "#555555": 'lightgray',
       }}
     >
       <Grid item sm={12} xs={12} style={{ padding: 0, paddingBottom: "5px" }}>
         <Header />
-      </Grid>
-      <Grid container className={classes.body} spacing={1}>
+        <Grid container className={classes.body} spacing={1}>
         <Grid item md={5} xs={12}>
           <SearchPanel />
         </Grid>
@@ -49,6 +51,9 @@ function Home() {
           <PokemonPaginate />
         </Grid>
       </Grid>
+      </Grid>
+    
+   
     </Grid>
   );
 }

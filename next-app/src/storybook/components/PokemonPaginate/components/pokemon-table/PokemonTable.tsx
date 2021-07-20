@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Collapse from "@material-ui/core/Collapse";
 import IconButton from "@material-ui/core/IconButton";
@@ -13,44 +12,9 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
+
 import PokeDetail from "../../../PokeDetail/PokeDetail";
-import './PokemonTable.module.css';
-
-const tableCell ={
-  padding: '0px',
- // paddingRight: '1rem',
-};
-
-const useRowStyles = makeStyles({
-  root: {
-    "& > *": {
-      borderBottom: "unset",
-    },
-  },
-  tableCell,
-  firstColumn: {
-    ...tableCell,
-    width: '2.5rem',
-    padding: '4px 0 4px 16px'
-  },
-  secondColumn: {
-    ...tableCell,
-    width: '3rem',
-    padding: '0',
-    paddingLeft: 0,
-
-    //paddingBottom: '0',
-  },
-  imgRow: {
-    padding: '0',
-  },
-  img: {
-    width: "20px",
-    height: "20px",
-    padding: '0',
-    marginTop: "10px",
-  },
-});
+import { useTableStyles, useRowStyles } from './PokemonTable.styles';
 
 function Row({ pokemon }) {
   const [open, setOpen] = React.useState(false);
@@ -101,23 +65,6 @@ Row.propTypes = {
     name: PropTypes.string.isRequired,
   }).isRequired,
 };
-
-const tableCell2 = {
-  paddingLeft: '0',
-}
-const useTableStyles = makeStyles({
-  tableContainer: {
-    marginTop: "0",
-  },
-  table: {
-   
-  },
-  tableCell: tableCell2,
-  firstCell: {
-    ...tableCell,
-    paddingLeft: '0',
-  }
-});
 
 export default function PokemonTable({pokemons}) {
   const classes = useTableStyles();
