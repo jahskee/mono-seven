@@ -25,7 +25,7 @@ export default function PaginationRounded() {
 
   return (
     <div className={classes.root}>
-      <Pagination count={3} variant="outlined" shape="rounded" page={pageInfo.selectedPage} defaultPage={1} onChange={handleChange} />
+      <Pagination count={3} variant="outlined" shape="rounded" page={pageInfo.selectedPage} defaultPage={1} onChange={handleChange} style={{padding: '5px'}}/>
     </div>
   );
 }

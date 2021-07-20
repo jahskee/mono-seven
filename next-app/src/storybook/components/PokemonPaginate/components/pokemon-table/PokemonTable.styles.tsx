@@ -7,7 +7,7 @@ const tableCell2 = {
 export const useTableStyles = makeStyles({
   tableContainer: {
     marginTop: '0',
-    minHeight: '495px',
+    minHeight: '489px',
   },
   table: {},
   tableCell: tableCell2,
