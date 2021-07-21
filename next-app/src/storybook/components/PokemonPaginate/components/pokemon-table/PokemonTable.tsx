@@ -76,7 +76,33 @@ export default function PokemonTable({ pokemons }) {
   const classes = useTableStyles();
   return (
     <Paper className={classes.tableContainer}>
-      <TableContainer component={Paper}>
+      {!pokemons && (
+        <div
+          style={{
+            position: "relative",
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            flexDirection: "column",
+          }}
+        >
+          <img
+            style={{
+              position: "relative",
+              width: 150,
+              height: 150,
+              top: 180,
+              opacity: 0.4,
+            }}
+            src="../images/loading2.gif"
+          />
+        </div>
+      )}
+      <TableContainer>
         <Table className={classes.table} aria-label="collapsible table">
           <TableHead>
             <TableRow key={1}>
@@ -97,12 +123,6 @@ export default function PokemonTable({ pokemons }) {
             </TableRow>
           </TableHead>
           <TableBody className={classes.tbody}>
-            {!pokemons && (
-              <img
-                src="../images/loading.gif"
-                style={{ width: "200px", height: "200px" }}
-              />
-            )}
             {pokemons &&
               pokemons.map((pokemon) => (
                 <Row key={pokemon.name} pokemon={pokemon} />
