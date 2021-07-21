@@ -24,7 +24,11 @@ export const GET_POKEMONS_COUNT = gql`
 export const FIND_NAMES = gql`
   query getKeys($name: String, $limit: Int) {
     findNames(name: $name, limit: $limit) {
+      id
       name
+      weight
+      generation
+      xp
     },
   }
 `;

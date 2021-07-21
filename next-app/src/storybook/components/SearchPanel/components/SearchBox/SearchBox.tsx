@@ -8,18 +8,13 @@ function SearchBox() {
 
   const handleSearch = (value) => {
     setSearchKey(value);
-    console.log(value);
   };
 
   const debouncedChangeHandler = useCallback(debounce(handleSearch, 300), []);
 
   return (
     <div>
-      <SearchBar
-        value={searchKey}
-        onChange={debouncedChangeHandler}
-        onRequestSearch={() => handleSearch(searchKey)}
-      />
+      <SearchBar value={searchKey} onChange={debouncedChangeHandler} />
     </div>
   );
 }

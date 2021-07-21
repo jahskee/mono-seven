@@ -16,12 +16,14 @@ const useStyles = makeStyles({
 
 function SearchPanel() {
   const { searchKey, setSearchKey} = useSearchKey();
-  const [getNames, { data, loading }] = useLazyQuery(Queries.FIND_NAMES);
+  const [findNames, { data, loading }] = useLazyQuery(Queries.FIND_NAMES);
   const classes = useStyles();
-
+  let pokemons = [];
+  
   useEffect(()=>{
     if (searchKey.length > 2) {
-      getNames();
+      findNames();
+      console.log(searchKey)
     }
   }, [searchKey]);
 
