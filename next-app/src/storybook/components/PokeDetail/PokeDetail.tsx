@@ -38,6 +38,7 @@ const useStyles = makeStyles({
   table: {
     padding: "5",
     paddingLeft: "1rem",
+    height: "100%",
   },
   cell: {
     margin: 0,
