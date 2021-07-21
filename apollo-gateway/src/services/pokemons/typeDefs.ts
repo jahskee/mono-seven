@@ -17,6 +17,7 @@ const typeDefs = gql`
     pokemonsCount: Int!
     pokemons: [Pokemon!]!
     allPokemons: [Pokemon!]!
+    findNames(name: String!, limit: Int!): [Pokemon!]
   }
 `;
 

@@ -41,6 +41,17 @@ const resolvers = {
     pokemon: (parent: unknown, { id }: { id: string }, context: unknown, info: unknown) => {
       return db.pokemons.find((item: any) => item.id === id);
     },
+    findNames: async (parent: unknown, { name, limit }: any, context: unknown, info: unknown) => {
+      let keys = await client.keysAsync(`${name}*`);
+      keys = keys.sort();
+      const results = keys.map(async (key: any) => {
+        const pokemon = await client.getAsync(key);
+        return JSON.parse(pokemon);
+      });
+
+      const pokemons = await Promise.all(results);
+      return pokemons.slice(0, limit);
+    },
   },
 };
 

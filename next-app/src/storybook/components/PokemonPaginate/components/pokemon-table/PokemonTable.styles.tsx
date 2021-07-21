@@ -31,9 +31,9 @@ export const useTableStyles = makeStyles({
   },
   loaderImage: {
     position: "relative",
-    width: 150,
-    height: 150,
-    top: 120,
+    width: 50,
+    height: 50,
+    top: 160,
     opacity: 0.4,
   },
 });
