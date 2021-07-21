@@ -18,6 +18,24 @@ export const useTableStyles = makeStyles({
     ...tableCell2,
     paddingLeft: "0",
   },
+  loaderImageContainer: {
+    position: "relative",
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+  },
+  loaderImage: {
+    position: "relative",
+    width: 150,
+    height: 150,
+    top: 180,
+    opacity: 0.4,
+  },
 });
 
 // ------------- Row Style -------------
