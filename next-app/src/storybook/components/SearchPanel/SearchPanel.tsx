@@ -16,14 +16,22 @@ const useStyles = makeStyles({
 
 function SearchPanel() {
   const { searchKey, setSearchKey} = useSearchKey();
-  const [findNames, { data, loading }] = useLazyQuery(Queries.FIND_NAMES);
+  const [findNames, { data, loading }] = useLazyQuery(Queries.FIND_NAMES, {variables: {
+    name: searchKey,
+    limit: 10,
+  }});
+
   const classes = useStyles();
-  let pokemons = [];
   
+  let pokemons = [];
   useEffect(()=>{
     if (searchKey.length > 2) {
-      findNames();
-      console.log(searchKey)
+      findNames({variables: {
+        name: searchKey,
+        limit: 10,
+      }});
+      pokemons = data.findNames;
+      console.log(searchKey, data)
     }
   }, [searchKey]);
 
