@@ -39,13 +39,13 @@ function SearchPanel() {
   
   const [pokemons, setPokemons] = useState([]);
   useEffect(()=>{
-   // if (searchKey.length > 2) {
+    if (searchKey.length > 1) {
         findNames();
         if(data) {
           setPokemons(data.findNames)
           console.log(pokemons)
         }
-    //}
+    }
   }, [searchKey]);
   if(loading) return <div>Loading...</div>
   return (
