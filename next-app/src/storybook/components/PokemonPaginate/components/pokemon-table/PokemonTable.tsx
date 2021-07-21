@@ -33,7 +33,7 @@ function Row({ pokemon }) {
         </TableCell>
         <TableCell
           className={classes.secondColumn}
-          style={{ padding: 0, width: 35 }}
+          style={{ padding: 0, width: '8%' }}
         >
           <div className={classes.imgRow}>
             <img className={classes.img} src={pokemon.image} />
@@ -76,6 +76,35 @@ export default function PokemonTable({ pokemons }) {
   const classes = useTableStyles();
   return (
     <Paper className={classes.tableContainer}>
+
+      <TableContainer>
+        <Table className={classes.table} aria-label="collapsible table" >
+          <TableHead>
+            <TableRow key={1}>
+              <TableCell />
+              <TableCell ></TableCell>
+              <TableCell className={classes.firstCell} align="left" >
+                Name
+              </TableCell>
+              <TableCell className={classes.tableCell} align="left" >
+                Generation
+              </TableCell>
+              <TableCell className={classes.tableCell} align="left" >
+                Weight
+              </TableCell>
+              <TableCell className={classes.tableCell} align="left" >
+                Experience
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody className={classes.tbody} style={{position: 'relative', top: 0, bottom: 0, left: 0, right: 0}}>
+            {pokemons &&
+              pokemons.map((pokemon) => (
+                <Row key={pokemon.name} pokemon={pokemon} />
+              ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
       {!pokemons && (
         <div className={classes.loaderImageContainer}>
           <img
@@ -84,34 +113,6 @@ export default function PokemonTable({ pokemons }) {
           />
         </div>
       )}
-      <TableContainer>
-        <Table className={classes.table} aria-label="collapsible table">
-          <TableHead>
-            <TableRow key={1}>
-              <TableCell />
-              <TableCell></TableCell>
-              <TableCell className={classes.firstCell} align="left">
-                Name
-              </TableCell>
-              <TableCell className={classes.tableCell} align="left">
-                Generation
-              </TableCell>
-              <TableCell className={classes.tableCell} align="left">
-                Weight
-              </TableCell>
-              <TableCell className={classes.tableCell} align="left">
-                Experience
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody className={classes.tbody}>
-            {pokemons &&
-              pokemons.map((pokemon) => (
-                <Row key={pokemon.name} pokemon={pokemon} />
-              ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
     </Paper>
   );
 }

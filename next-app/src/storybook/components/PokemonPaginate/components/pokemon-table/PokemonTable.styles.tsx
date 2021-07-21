@@ -33,7 +33,7 @@ export const useTableStyles = makeStyles({
     position: "relative",
     width: 150,
     height: 150,
-    top: 180,
+    top: 120,
     opacity: 0.4,
   },
 });
