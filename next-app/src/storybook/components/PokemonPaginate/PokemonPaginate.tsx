@@ -3,9 +3,9 @@ import PokemonTable from "./components/pokemon-table/PokemonTable";
 import Pagination7 from "./components/pagination7/Pagination7";
 import { makeStyles } from "@material-ui/styles";
 import { Grid, Paper, Box } from "@material-ui/core";
-import { gql, useLazyQuery } from "@apollo/client";
+import { useLazyQuery } from "@apollo/client";
 import { usePageInfo } from "../../../appState/appState";
-import Queries from '../../_data_mocks/apollo_client_queries';
+import Queries from '../../_queries/apollo_client_queries';
 
 const pageControl = {
   display: "flex",

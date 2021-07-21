@@ -1,4 +1,4 @@
-import Queries from "./apollo_client_queries";
+import Queries from "../_queries/apollo_client_queries";
 import DataMocks from "./data_mocks";
 
 function getPagedPokemons() {

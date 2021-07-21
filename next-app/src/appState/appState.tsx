@@ -24,6 +24,7 @@ export const useRecordPerPage = () => {
   return { recordPerPage, setRecordPerPage };
 };
 
+
 interface UseAppConfig {
   appConfig: {
     isMocked: boolean

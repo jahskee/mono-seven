@@ -15,6 +15,13 @@ query getPagedPokemons($offset: Int, $limit: Int) {
 }
 `;
 
+export const GET_POKEMONS_COUNT = gql`
+query getPokemonsCount {
+  pokemonsCount
+}
+`;
+
 export default {
   GET_PAGED_POKEMONS,
+  GET_POKEMONS_COUNT,
 }

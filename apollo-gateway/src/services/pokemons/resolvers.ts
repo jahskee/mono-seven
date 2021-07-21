@@ -17,7 +17,7 @@ const resolvers = {
       const end = offset + limit;
       return db.pokemons.slice(offset, end );
     },
-    pokemonCount: (parent:unknown, args: any, context:unknown, info: unknown) => {
+    pokemonsCount: (parent:unknown, args: any, context:unknown, info: unknown) => {
       return 34;
     },
     pokemon: (parent:unknown, { id }: {id: string}, context: unknown, info: unknown) => {
