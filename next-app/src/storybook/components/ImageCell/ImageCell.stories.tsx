@@ -1,5 +1,5 @@
 import ImageCell from './ImageCell';
-import pokemons from '../../_data_mocks/pokemons';
+import DataMocks from '../../_data_mocks/data_mocks';
 
 export default {
   title: '7-Eleven/Components/ImageCell',
@@ -9,5 +9,5 @@ export default {
 const Template = (args) => (<ImageCell {...args} />);
 export const Widget = Template.bind({});
 Widget.args = {
-  pokemon: pokemons[9],
+  pokemon: DataMocks.pokemons[9],
 };

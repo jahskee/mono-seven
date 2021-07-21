@@ -3,7 +3,7 @@ import SearchBox from './components/SearchBox/SearchBox';
 import SearchResult from './components/SearchResult/SearchResult';
 import { makeStyles } from '@material-ui/styles';
 import { Grid } from '@material-ui/core';
-import DataMocked from '../../_data_mocks/pokemons'
+import DataMocked from '../../_data_mocks/data_mocks'
 
 const useStyles = makeStyles({
   seachResult: {

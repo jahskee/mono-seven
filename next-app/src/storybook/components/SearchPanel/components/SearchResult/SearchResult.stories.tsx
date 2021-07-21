@@ -1,5 +1,5 @@
 import SearchResult from "./SearchResult";
-import pokemons from '../../../../_data_mocks/pokemons';
+import DataMocks from '../../../../_data_mocks/data_mocks';
 
 export default {
   title: "7-Eleven/Components/SearchPanel/Components/SearchResult",
@@ -9,5 +9,5 @@ export default {
 const Template = (args) => (<SearchResult {...args} />);
 export const Widget = Template.bind({});
 Widget.args = {
-  pokemons
+  pokemons: DataMocks.pokemons.slice(0,10),
 };

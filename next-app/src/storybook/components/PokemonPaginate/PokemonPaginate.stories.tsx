@@ -1,6 +1,5 @@
 import PokemonPaginate from './PokemonPaginate';
-import Queries from '../../_queries/queries';
-import DataMocks from '../../_data_mocks/pokemons';
+import { apolloClientMocks } from '../../_data_mocks/apollo_client_mocks';
 
 export default {
   title: "7-Eleven/Components/PokemonPaginate",
@@ -12,22 +11,5 @@ export const Widget = Template.bind({});
 Widget.args = {};
 
 Widget.parameters = {
-  apolloClient: {
-    mocks: [
-      {
-        request: {
-          query: Queries.GET_PAGED_POKEMONS,
-          variables: {
-            offset:0,
-            limit:10,
-          }
-        },
-        result: {
-          data: {
-            pagedPokemons: DataMocks.pokemons.slice(0,10),
-          },
-        },
-      },
-    ],
-  },
+  apolloClient: apolloClientMocks,
 };

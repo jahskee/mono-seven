@@ -1,5 +1,5 @@
 import PokeDetail from './PokeDetail';
-import pokemons from '../../_data_mocks/pokemons';
+import DataMocks from '../../_data_mocks/data_mocks';
 
 export default {
   title: '7-Eleven/Components/PokeDetail',
@@ -9,5 +9,5 @@ export default {
 const Template = (args) => (<PokeDetail {...args} />);
 export const Widget = Template.bind({});
 Widget.args = {
-  pokemon: pokemons[1],
+  pokemon: DataMocks.pokemons[1],
 };
