@@ -24,6 +24,12 @@ export const useRecordPerPage = () => {
   return { recordPerPage, setRecordPerPage };
 };
 
+const setSearchKey = makeVar("");
+export const useSearchKey = () => {
+  const searchKey = useReactiveVar(setSearchKey);
+  return { searchKey, setSearchKey };
+};
+
 interface UseAppConfig {
   appConfig: {
     isMocked: boolean;

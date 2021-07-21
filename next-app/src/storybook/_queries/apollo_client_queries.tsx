@@ -21,7 +21,16 @@ export const GET_POKEMONS_COUNT = gql`
   }
 `;
 
+export const FIND_NAMES = gql`
+  query getKeys($name: String, $limit: Int) {
+    findNames(name: $name, limit: $limit) {
+      name
+    },
+  }
+`;
+
 export default {
+  FIND_NAMES,
   GET_PAGED_POKEMONS,
   GET_POKEMONS_COUNT,
 };

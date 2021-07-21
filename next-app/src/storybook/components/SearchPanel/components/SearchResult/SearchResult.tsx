@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
@@ -94,9 +94,10 @@ const useTableStyles = makeStyles({
 
 export default function PokemonTable({ pokemons }) {
   const classes = useTableStyles();
+
   return (
     <div className={classes.tableContainer}>
-      <TableContainer component={Paper} style={{minHeight: '482px'}}>
+      <TableContainer component={Paper} style={{ minHeight: "482px" }}>
         <Table aria-label="collapsible table">
           <TableBody>
             {pokemons.map((pokemon) => (
