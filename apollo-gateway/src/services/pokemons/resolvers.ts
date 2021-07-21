@@ -1,5 +1,13 @@
 import db from "../../db/mocked";
 import axios from "axios";
+const redis = require("redis");
+const { promisifyAll } = require("bluebird");
+promisifyAll(redis);
+
+const client = redis.createClient({
+  host: "localhost",
+  port: "6379",
+});
 
 const resolvers = {
   Pokemon: {
@@ -15,8 +23,6 @@ const resolvers = {
       return db.pokemons;
     },
     pagedPokemons: async (parent: unknown, { offset, limit }: any, context: unknown, info: unknown) => {
-      const end = offset + limit;
-
       const headData: any = await axios({
         method: "get",
         url: `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`,
@@ -45,20 +51,31 @@ function getId(url: string) {
 
 async function getPokemonDetail({ name, url }: any): Promise<any> {
   const id = getId(url);
-  const bodyData: any = await axios({
-    method: "get",
-    url: `https://pokeapi.co/api/v2/pokemon/${id}`,
-  });
-  const pokemon = {
-    id,
-    name,
-    weight: "189",
-    accuracy: "96",
-    power: "24",
-    generation: "gen-v",
-    xp: "81.00",
-    image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`,
-  };
+  let pokemon = await client.getAsync(name);
+  if (!pokemon) {
+    const bodyData: any = await axios({
+      method: "get",
+      url: `https://pokeapi.co/api/v2/pokemon/${id}`,
+    });
+
+    pokemon = {
+      id,
+      name,
+      weight: "189",
+      accuracy: "96",
+      power: "24",
+      generation: "gen-v",
+      xp: "81.00",
+      image: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`,
+    };
+
+    await client.setAsync(name, JSON.stringify(pokemon));
+  } else {
+    pokemon = await client.getAsync(name);
+    pokemon = JSON.parse(pokemon);
+  }
+  //const fooValue = await client.getAsync('foo');
+  //const obj = JSON.parse(fooValue);
   return pokemon;
 }
 

@@ -21,6 +21,7 @@
     "@apollo/gateway": "^0.29.1",
     "apollo-server-express": "^2.25.2",
     "axios": "^0.21.1",
+    "bluebird": "^3.7.2",
     "dotenv": "^8.2.0",
     "esm": "^3.2.25",
     "express": "^4.17.1",
