@@ -26,22 +26,19 @@ function SearchPanel() {
   let pokemons = [];
   useEffect(()=>{
     if (searchKey.length > 2) {
-      findNames({variables: {
-        name: searchKey,
-        limit: 10,
-      }});
-      pokemons = data.findNames;
-      console.log(searchKey, data)
+     
+        findNames();
+        console.log(data.findNames)
     }
   }, [searchKey]);
-
+  if(loading) return <div>Loading...</div>
   return (
     <Grid container spacing={1}>
       <Grid item xs={12}>
         <SearchBox />
       </Grid>
       <Grid item xs={12} >
-        <SearchResult pokemons={DataMocked.pokemons.slice(0,5)} />
+        <SearchResult pokemons={data.findNames} />
       </Grid>
     </Grid>
   );
