@@ -10,6 +10,9 @@ export const useTableStyles = makeStyles({
     minHeight: "489px",
   },
   table: {},
+  tbody: {
+    height: '500px',
+  },
   tableCell: tableCell2,
   firstCell: {
     ...tableCell2,

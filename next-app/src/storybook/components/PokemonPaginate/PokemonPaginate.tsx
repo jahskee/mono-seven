@@ -40,7 +40,7 @@ function PokemonPaginate() {
   const classes = useStyle();
   const query1 = graphQueryGetPokemons();
 
-  if (query1.called && query1.loading) return <div>Loading...</div>;
+ // if (query1.called && query1.loading) return <div>Loading...</div>;
   if (query1.error) return <div>`Error! ${query1.error}`</div>;
 
   if (!query1.called) {
@@ -60,8 +60,21 @@ function PokemonPaginate() {
         </Grid>
       </Grid>
     );
+  } else {
+    return (
+      <Grid container>
+        <Grid item xs={12}>
+          <PokemonTable pokemons={undefined} />
+        </Grid>
+        <Grid item xs={12}>
+          <Box className={classes.pageControlBottom} component={Paper}>
+            <Pagination7 />
+          </Box>
+        </Grid>
+      </Grid>
+    );
   }
-  return <div>Loading...</div>;
+  //return <div>Loading...</div>;
 }
 
 export default PokemonPaginate;

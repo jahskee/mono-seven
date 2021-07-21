@@ -12,7 +12,6 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
-
 import PokeDetail from "../../../PokeDetail/PokeDetail";
 import { useTableStyles, useRowStyles } from "./PokemonTable.styles";
 
@@ -97,10 +96,17 @@ export default function PokemonTable({ pokemons }) {
               </TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
-            {pokemons.map((pokemon) => (
-              <Row key={pokemon.name} pokemon={pokemon} />
-            ))}
+          <TableBody className={classes.tbody}>
+            {!pokemons && (
+              <img
+                src="../images/loading.gif"
+                style={{ width: "200px", height: "200px" }}
+              />
+            )}
+            {pokemons &&
+              pokemons.map((pokemon) => (
+                <Row key={pokemon.name} pokemon={pokemon} />
+              ))}
           </TableBody>
         </Table>
       </TableContainer>
