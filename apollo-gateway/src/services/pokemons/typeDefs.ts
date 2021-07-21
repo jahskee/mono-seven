@@ -1,7 +1,7 @@
 import { gql } from "apollo-server-express";
 
 const typeDefs = gql`
-  type Pokemon @key(fields: "id"){
+  type Pokemon @key(fields: "id") {
     id: String!
     name: String!
     weight: String
@@ -14,7 +14,7 @@ const typeDefs = gql`
   extend type Query {
     pokemon(id: ID!): Pokemon!
     pagedPokemons(offset: Int, limit: Int): [Pokemon]
-    pokemonsCount: Int!,
+    pokemonsCount: Int!
     pokemons: [Pokemon!]!
     allPokemons: [Pokemon!]!
   }

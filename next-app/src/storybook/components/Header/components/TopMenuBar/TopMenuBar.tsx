@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Box, Typography } from "@material-ui/core";
 import { AppBar, Toolbar, IconButton } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
@@ -11,10 +11,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
   },
-  menuButton: {
-    //display: "flex",
-    // flexDirection: "column",
-  },
+  menuButton: {},
   title: {
     fontSize: "1rem",
   },
@@ -32,7 +29,7 @@ function AppBar7() {
   }
 
   return (
-    <AppBar position="static" style={{padding: 0}}>
+    <AppBar position="static" style={{ padding: 0 }}>
       <Toolbar className={classes.root}>
         <Box>
           <IconButton

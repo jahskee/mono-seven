@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Pagination from "@material-ui/lab/Pagination";
 import { usePageInfo } from "../../../../../appState/appState";
@@ -20,15 +20,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function PaginationRounded() {
   const classes = useStyles();
-  const [getPokemonsCount, { data }] = useLazyQuery(
-    Queries.GET_POKEMONS_COUNT
-  );
+  const [getPokemonsCount, { data }] = useLazyQuery(Queries.GET_POKEMONS_COUNT);
   const { pageInfo, setPageInfo } = usePageInfo();
 
   useEffect(() => {
     getPokemonsCount();
     if (data) {
-      const { pokemonsCount} = data.pokemonsCount;
+      const { pokemonsCount } = data;
       const pageCount = Math.ceil(pokemonsCount / pageInfo.limit);
       setPageInfo({ ...pageInfo, pageCount });
     }

@@ -1,6 +1,6 @@
 import React from "react";
-import { muiTheme } from 'storybook-addon-material-ui'
-import { MockedProvider } from '@apollo/client/testing';
+import { muiTheme } from "storybook-addon-material-ui";
+import { MockedProvider } from "@apollo/client/testing";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -11,14 +11,12 @@ export const parameters = {
     },
   },
   darkMode: {
-    current: 'dark'
+    current: "dark",
   },
   apolloClient: {
     MockedProvider,
     // any props you want to pass to MockedProvider on every story
   },
-}
+};
 
-export const decorators = [
-	muiTheme()
-];
+export const decorators = [muiTheme()];

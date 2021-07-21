@@ -1,7 +1,7 @@
-import Switch from '@material-ui/core/Switch';
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import Switch from "@material-ui/core/Switch";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: 42,
     height: 26,
@@ -10,18 +10,18 @@ const useStyles = makeStyles(theme => ({
   },
   switchBase: {
     padding: 1,
-    '&$checked': {
-      transform: 'translateX(16px)',
+    "&$checked": {
+      transform: "translateX(16px)",
       color: theme.palette.common.white,
-      '& + $track': {
-        backgroundColor: '#424242',
+      "& + $track": {
+        backgroundColor: "#424242",
         opacity: 1,
-        border: 'none',
+        border: "none",
       },
     },
-    '&$focusVisible $thumb': {
-      color: '#52d869',
-      border: '6px solid #fff',
+    "&$focusVisible $thumb": {
+      color: "#52d869",
+      border: "6px solid #fff",
     },
   },
   thumb: {
@@ -31,16 +31,15 @@ const useStyles = makeStyles(theme => ({
   track: {
     borderRadius: 26 / 2,
     border: `1px solid ${theme.palette.grey[400]}`,
-    backgroundColor: 'lightgray',
+    backgroundColor: "lightgray",
     opacity: 1,
-    transition: theme.transitions.create(['background-color', 'border']),
+    transition: theme.transitions.create(["background-color", "border"]),
   },
   checked: {},
   focusVisible: {},
 }));
 
-
-const IOSSwitch = ({...props }) => {
+const IOSSwitch = ({ ...props }) => {
   const classes = useStyles();
   return (
     <Switch
@@ -56,6 +55,6 @@ const IOSSwitch = ({...props }) => {
       {...props}
     />
   );
-}
+};
 
 export default IOSSwitch;

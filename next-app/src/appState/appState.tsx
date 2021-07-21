@@ -7,7 +7,7 @@ export const useDarkMode = () => {
 };
 
 const setPageInfo = makeVar({ selectedPage: 1, limit: 10, pageCount: 34 });
-export const usePageInfo = function() {
+export const usePageInfo = function () {
   const pageInfo = useReactiveVar(setPageInfo);
   return { pageInfo, setPageInfo };
 };
@@ -24,15 +24,14 @@ export const useRecordPerPage = () => {
   return { recordPerPage, setRecordPerPage };
 };
 
-
 interface UseAppConfig {
   appConfig: {
-    isMocked: boolean
-  }
+    isMocked: boolean;
+  };
   setAppConfig: Function;
 }
 
-const setAppConfig = makeVar({isMocked: true});
+const setAppConfig = makeVar({ isMocked: true });
 export const useAppConfig = (): UseAppConfig => {
   const appConfig = useReactiveVar(setAppConfig);
   return { appConfig, setAppConfig };

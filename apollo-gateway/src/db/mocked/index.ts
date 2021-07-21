@@ -1,8 +1,7 @@
-import pokemons from './pokemons';
+import pokemons from "./pokemons";
 
-const db:any = {
+const db: any = {
   pokemons,
-}
+};
 
 export default db;
-

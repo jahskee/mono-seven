@@ -1,8 +1,5 @@
 module.exports = {
-  stories: [
-    "../src/**/*.stories.mdx",
-    "../src/**/*.stories.@(js|jsx|ts|tsx)"
-  ],
+  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     "@storybook/addon-actions",
     "@storybook/addon-docs",
@@ -14,6 +11,6 @@ module.exports = {
     "@storybook/preset-create-react-app",
     "storybook-add-material-ui",
     "storybook-dark-mode",
-    "storybook-addon-apollo-client"
-  ]
-}
+    "storybook-addon-apollo-client",
+  ],
+};

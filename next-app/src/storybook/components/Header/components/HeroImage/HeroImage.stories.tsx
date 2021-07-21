@@ -1,15 +1,14 @@
-import HeroImage from './HeroImage';
+import HeroImage from "./HeroImage";
 
 export default {
-  title: '7-Eleven/Components/Header/Components/HeroImage',
+  title: "7-Eleven/Components/Header/Components/HeroImage",
   component: HeroImage,
-  args: {  // default values
-  
+  args: {
+    // default values
   },
-  argTypes: {
-  },
+  argTypes: {},
 };
 
-const Template = (args) => (<HeroImage {...args} />);
+const Template = (args) => <HeroImage {...args} />;
 export const Widget = Template.bind({});
-Widget.args = {}
+Widget.args = {};

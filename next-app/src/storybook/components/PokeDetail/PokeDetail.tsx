@@ -15,9 +15,8 @@ const StyledTableCell = withStyles((theme) => ({
   body: {
     fontSize: 14,
     border: 1,
-    padding: 0
+    padding: 0,
   },
-  
 }))(TableCell);
 
 const StyledTableRow = withStyles((theme) => ({
@@ -38,16 +37,15 @@ const useStyles = makeStyles({
   },
   table: {
     padding: "5",
-    paddingLeft: '1rem',
+    paddingLeft: "1rem",
   },
   cell: {
     margin: 0,
     paddingLeft: "10px",
-    border: '0',
-
+    border: "0",
   },
   tableRow: {
-    padding: '10px',
+    padding: "10px",
     margin: 0,
   },
   imgRow: {
@@ -66,7 +64,7 @@ const useStyles = makeStyles({
   container: {
     display: "flex",
     width: "100%",
-    marginLeft: '10px'
+    marginLeft: "10px",
   },
 });
 
@@ -74,72 +72,82 @@ export default function PokeDetail({ pokemon }) {
   const classes = useStyles();
 
   return (
-    <Box className={classes.root} style={{paddingBottom: '5px', paddingLeft: '1.5rem'}}>
-     
-        <TableContainer className={classes.tableContainer} component={Paper} style={{padding: '2px'}}>
-          <Table className={classes.table} aria-label="a dense table">
-            <TableBody>
-              <StyledTableRow key={1}>
-                <StyledTableCell className={classes.cell}>
-                 <b>name</b>
-                </StyledTableCell>
-                <StyledTableCell className={classes.cell}>
-                  {pokemon.name}
-                </StyledTableCell>
-              </StyledTableRow>
+    <Box
+      className={classes.root}
+      style={{ paddingBottom: "5px", paddingLeft: "1.5rem" }}
+    >
+      <TableContainer
+        className={classes.tableContainer}
+        component={Paper}
+        style={{ padding: "2px" }}
+      >
+        <Table className={classes.table} aria-label="a dense table">
+          <TableBody>
+            <StyledTableRow key={1}>
+              <StyledTableCell className={classes.cell}>
+                <b>name</b>
+              </StyledTableCell>
+              <StyledTableCell className={classes.cell}>
+                {pokemon.name}
+              </StyledTableCell>
+            </StyledTableRow>
 
-              <StyledTableRow key={2}>
-                <StyledTableCell className={classes.cell}>
-                  <b>weight</b>
-                </StyledTableCell>
-                <StyledTableCell className={classes.cell}>
-                  {pokemon.weight+" lbs"}
-                </StyledTableCell>
-              </StyledTableRow>
-              <StyledTableRow key={3}>
-                <StyledTableCell className={classes.cell}>
-                  <b>accuracy</b>
-                </StyledTableCell>
-                <StyledTableCell className={classes.cell}>
-                  {pokemon.accuracy}
-                </StyledTableCell>
-              </StyledTableRow>
-            </TableBody>
-          </Table>
-        </TableContainer>
+            <StyledTableRow key={2}>
+              <StyledTableCell className={classes.cell}>
+                <b>weight</b>
+              </StyledTableCell>
+              <StyledTableCell className={classes.cell}>
+                {pokemon.weight + " lbs"}
+              </StyledTableCell>
+            </StyledTableRow>
+            <StyledTableRow key={3}>
+              <StyledTableCell className={classes.cell}>
+                <b>accuracy</b>
+              </StyledTableCell>
+              <StyledTableCell className={classes.cell}>
+                {pokemon.accuracy}
+              </StyledTableCell>
+            </StyledTableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
 
-        <TableContainer component={Paper} className={classes.tableContainer} style={{padding: '2px'}}>
-          <Table className={classes.table} aria-label="customized table">
-            <TableBody>
-              <StyledTableRow key={4}>
-                <StyledTableCell className={classes.cell} align="left">
-                  <b>power</b>
-                </StyledTableCell>
-                <StyledTableCell className={classes.cell} align="left">
-                  {pokemon.power}
-                </StyledTableCell>
-              </StyledTableRow>
-              <StyledTableRow key={5}>
-                <StyledTableCell className={classes.cell} align="left">
-                  <b>generation</b>
-                </StyledTableCell>
-                <StyledTableCell className={classes.cell} align="left">
-                  {pokemon.generation}
-                </StyledTableCell>
-              </StyledTableRow>
-              <StyledTableRow key={6}>
-                <StyledTableCell className={classes.cell} align="left">
-                  <b>experience</b>
-                </StyledTableCell>
-                <StyledTableCell className={classes.cell} align="left">
-                  {pokemon.xp}
-                </StyledTableCell>
-              </StyledTableRow>
-            </TableBody>
-          </Table>
-        </TableContainer>
-    
-      <div className={classes.imgRow} style={{paddingTop: 8}}>
+      <TableContainer
+        component={Paper}
+        className={classes.tableContainer}
+        style={{ padding: "2px" }}
+      >
+        <Table className={classes.table} aria-label="customized table">
+          <TableBody>
+            <StyledTableRow key={4}>
+              <StyledTableCell className={classes.cell} align="left">
+                <b>power</b>
+              </StyledTableCell>
+              <StyledTableCell className={classes.cell} align="left">
+                {pokemon.power}
+              </StyledTableCell>
+            </StyledTableRow>
+            <StyledTableRow key={5}>
+              <StyledTableCell className={classes.cell} align="left">
+                <b>generation</b>
+              </StyledTableCell>
+              <StyledTableCell className={classes.cell} align="left">
+                {pokemon.generation}
+              </StyledTableCell>
+            </StyledTableRow>
+            <StyledTableRow key={6}>
+              <StyledTableCell className={classes.cell} align="left">
+                <b>experience</b>
+              </StyledTableCell>
+              <StyledTableCell className={classes.cell} align="left">
+                {pokemon.xp}
+              </StyledTableCell>
+            </StyledTableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
+
+      <div className={classes.imgRow} style={{ paddingTop: 8 }}>
         <img className={classes.img} src={pokemon.image} />
       </div>
     </Box>

@@ -1,16 +1,15 @@
-import React from 'react';
-import AppBar7 from './TopMenuBar';
+import React from "react";
+import AppBar7 from "./TopMenuBar";
 
 export default {
-  title: '7-Eleven/Components/Header/Components/TopMenuBar',
+  title: "7-Eleven/Components/Header/Components/TopMenuBar",
   component: AppBar7,
-  args: {  // default values
-  
+  args: {
+    // default values
   },
-  argTypes: {
-  },
+  argTypes: {},
 };
 
-const Template = (args) => (<AppBar7 {...args} />);
+const Template = (args) => <AppBar7 {...args} />;
 export const Widget = Template.bind({});
-Widget.args = {}
+Widget.args = {};

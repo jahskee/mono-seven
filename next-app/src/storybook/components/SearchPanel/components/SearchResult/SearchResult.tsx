@@ -22,28 +22,30 @@ const useRowStyles = makeStyles({
     },
   },
   secondColumn: {
-    width: '3rem',
-    padding: '0',
+    width: "3rem",
+    padding: "0",
     paddingLeft: 0,
   },
   tableCell: {
-    padding: '1px',
-    paddingRight: '1rem'
+    padding: "1px",
+    paddingRight: "1rem",
   },
   firstColumn: {
-    width: '2.5rem',
-  }
+    width: "2.5rem",
+  },
 });
 
-function Row({pokemon}) {
- 
+function Row({ pokemon }) {
   const [open, setOpen] = React.useState(false);
   const classes = useRowStyles();
 
   return (
     <React.Fragment>
       <TableRow key={1} className={classes.root}>
-        <TableCell padding="none" className={`${classes.firstColumn} ${classes.tableCell}`}>
+        <TableCell
+          padding="none"
+          className={`${classes.firstColumn} ${classes.tableCell}`}
+        >
           <IconButton
             aria-label="expand row"
             size="small"
@@ -52,18 +54,26 @@ function Row({pokemon}) {
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
-        <TableCell className={classes.secondColumn} style={{padding:0, width: 35}}>
+        <TableCell
+          className={classes.secondColumn}
+          style={{ padding: 0, width: 35 }}
+        >
           <ImageCell pokemon={pokemon} />
         </TableCell>
-        <TableCell component="th" scope="row" padding="none" className={classes.tableCell}>
+        <TableCell
+          component="th"
+          scope="row"
+          padding="none"
+          className={classes.tableCell}
+        >
           {pokemon.name}
         </TableCell>
       </TableRow>
-      <TableRow key={2} >
+      <TableRow key={2}>
         <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box margin={1}>
-              <PokeDetail pokemon={pokemon}/>
+              <PokeDetail pokemon={pokemon} />
             </Box>
           </Collapse>
         </TableCell>
@@ -74,21 +84,19 @@ function Row({pokemon}) {
 
 Row.propTypes = {
   pokemon: PropTypes.shape({
-   name: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
   }).isRequired,
 };
 
 const useTableStyles = makeStyles({
-  tableContainer: {
-
-  }
+  tableContainer: {},
 });
 
-export default function PokemonTable({pokemons}) {
+export default function PokemonTable({ pokemons }) {
   const classes = useTableStyles();
   return (
     <div className={classes.tableContainer}>
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} style={{minHeight: '482px'}}>
         <Table aria-label="collapsible table">
           <TableBody>
             {pokemons.map((pokemon) => (

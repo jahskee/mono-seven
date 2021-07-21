@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/styles";
 import { Grid, Paper, Box } from "@material-ui/core";
 import { useLazyQuery } from "@apollo/client";
 import { usePageInfo } from "../../../appState/appState";
-import Queries from '../../_queries/apollo_client_queries';
+import Queries from "../../_queries/apollo_client_queries";
 
 const pageControl = {
   display: "flex",
@@ -26,12 +26,12 @@ const useStyle = makeStyles((theme) => ({
 function graphQueryGetPokemons() {
   const { pageInfo } = usePageInfo();
   const recStart = (pageInfo.selectedPage - 1) * pageInfo.limit;
-  const [
-    getPagedPokemons,
-    { called, loading, error, data },
-  ] = useLazyQuery(Queries.GET_PAGED_POKEMONS, {
-    variables: { offset: recStart, limit: pageInfo.limit },
-  });
+  const [getPagedPokemons, { called, loading, error, data }] = useLazyQuery(
+    Queries.GET_PAGED_POKEMONS,
+    {
+      variables: { offset: recStart, limit: pageInfo.limit },
+    }
+  );
 
   return { getPagedPokemons, called, loading, error, data };
 }
