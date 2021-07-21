@@ -5,8 +5,7 @@ import { makeStyles } from "@material-ui/styles";
 import { Grid } from "@material-ui/core";
 import DataMocked from "../../_data_mocks/data_mocks";
 import { useSearchKey } from '../../../appState/appState';
-import { useLazyQuery } from "@apollo/client";
-import Queries from "../../_queries/apollo_client_queries";
+import { useLazyQuery, gql } from "@apollo/client";
 
 const useStyles = makeStyles({
   seachResult: {
@@ -14,9 +13,24 @@ const useStyles = makeStyles({
   },
 });
 
+export const FIND_NAMES = gql`
+ {
+    findNames(name: "ba", limit:10) {
+      id
+      name
+      weight
+      accuracy
+      power
+      generation
+      xp
+      image
+    },
+  }
+`;
+
 function SearchPanel() {
   const { searchKey, setSearchKey} = useSearchKey();
-  const [findNames, { data, loading }] = useLazyQuery(Queries.FIND_NAMES, {variables: {
+  const [findNames, { data, loading }] = useLazyQuery(FIND_NAMES, {variables: {
     name: searchKey,
     limit: 10,
   }});
