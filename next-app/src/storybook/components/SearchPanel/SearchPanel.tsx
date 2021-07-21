@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import SearchBox from "./components/SearchBox/SearchBox";
 import SearchResult from "./components/SearchResult/SearchResult";
 import { makeStyles } from "@material-ui/styles";
@@ -23,14 +23,15 @@ function SearchPanel() {
 
   const classes = useStyles();
   
-  let pokemons = [];
+  const [pokemons, setPokemons] = useState([]);
   useEffect(()=>{
-    if (searchKey.length > 2) {
-     
+   // if (searchKey.length > 2) {
         findNames();
-        console.log(data.findNames)
-
-    }
+        if(data) {
+          setPokemons(data.findNames)
+          console.log(pokemons)
+        }
+    //}
   }, [searchKey]);
   if(loading) return <div>Loading...</div>
   return (
@@ -39,7 +40,7 @@ function SearchPanel() {
         <SearchBox />
       </Grid>
       <Grid item xs={12} >
-        <SearchResult pokemons={data.findNames} />
+        <SearchResult pokemons={pokemons} />
       </Grid>
     </Grid>
   );

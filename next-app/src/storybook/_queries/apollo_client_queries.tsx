@@ -27,8 +27,11 @@ export const FIND_NAMES = gql`
       id
       name
       weight
+      accuracy
+      power
       generation
       xp
+      image
     },
   }
 `;
