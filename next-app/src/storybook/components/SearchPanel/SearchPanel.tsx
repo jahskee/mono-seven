@@ -29,6 +29,7 @@ function SearchPanel() {
      
         findNames();
         console.log(data.findNames)
+
     }
   }, [searchKey]);
   if(loading) return <div>Loading...</div>
