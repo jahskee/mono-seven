@@ -15,7 +15,7 @@ const useStyles = makeStyles({
 
 export const FIND_NAMES = gql`
  {
-    findNames(name: "ba", limit:10) {
+    findNames(name: "ca", limit:10) {
       id
       name
       weight
@@ -24,26 +24,26 @@ export const FIND_NAMES = gql`
       generation
       xp
       image
-    },
+    }
   }
 `;
 
 function SearchPanel() {
   const { searchKey, setSearchKey} = useSearchKey();
-  const [findNames, { data, loading }] = useLazyQuery(FIND_NAMES, {variables: {
-    name: searchKey,
-    limit: 10,
-  }});
+  const [findNames, { data, loading }] = useLazyQuery(FIND_NAMES);
 
   const classes = useStyles();
   
   const [pokemons, setPokemons] = useState([]);
   useEffect(()=>{
     if (searchKey.length > 1) {
-        findNames();
+        findNames({variables: {
+          name: searchKey,
+          limit: 10,
+        }});
         if(data) {
           setPokemons(data.findNames)
-          console.log(pokemons)
+          console.log(pokemons[2])
         }
     }
   }, [searchKey]);
