@@ -3,7 +3,7 @@ import SearchBox from "./components/SearchBox/SearchBox";
 import SearchResult from "./components/SearchResult/SearchResult";
 import { makeStyles } from "@material-ui/styles";
 import { Grid } from "@material-ui/core";
-import DataMocked from "../../_data_mocks/data_mocks";
+import DataMocks from "../../_data_mocks/data_mocks";
 import { useSearchKey } from '../../../appState/appState';
 import { useLazyQuery, gql } from "@apollo/client";
 
@@ -13,9 +13,10 @@ const useStyles = makeStyles({
   },
 });
 
+const name="ca";
 export const FIND_NAMES = gql`
- {
-    findNames(name: "ca", limit:10) {
+  query findNames($name: String!){
+    findNames(name: $name, limit:10) {
       id
       name
       weight
@@ -28,33 +29,31 @@ export const FIND_NAMES = gql`
   }
 `;
 
+
+
 function SearchPanel() {
   const { searchKey, setSearchKey} = useSearchKey();
   const [findNames, { data, loading }] = useLazyQuery(FIND_NAMES);
-
   const classes = useStyles();
-  
   const [pokemons, setPokemons] = useState([]);
-  useEffect(()=>{
-    if (searchKey.length > 1) {
-        findNames({variables: {
-          name: searchKey,
-          limit: 10,
-        }});
-        if(data) {
-          setPokemons(data.findNames)
-          console.log(pokemons[2])
-        }
-    }
-  }, [searchKey]);
+
+  const handleSearchChange = (searchKey, limit = 10)=> {
+    console.log("searchkey", searchKey, "limit", 10)
+
+    findNames({variables: {
+      name: searchKey,
+      limit,
+    }});
+  }
+
   if(loading) return <div>Loading...</div>
   return (
     <Grid container spacing={1}>
       <Grid item xs={12}>
-        <SearchBox />
+        <SearchBox handleSearchChange={handleSearchChange}/>
       </Grid>
       <Grid item xs={12} >
-        <SearchResult pokemons={pokemons} />
+        <SearchResult pokemons={DataMocks.pokemons} />
       </Grid>
     </Grid>
   );

@@ -3,11 +3,12 @@ import SearchBar from "material-ui-search-bar";
 import { useSearchKey } from "../../../../../appState/appState";
 import debounce from "lodash.debounce";
 
-function SearchBox() {
+function SearchBox({handleSearchChange}) {
   const { searchKey, setSearchKey } = useSearchKey();
 
-  const handleSearch = (value) => {
-    setSearchKey(value);
+  const handleSearch = (searchKey) => {
+    setSearchKey(searchKey);
+    handleSearchChange(searchKey)
   };
 
   const debouncedChangeHandler = useCallback(debounce(handleSearch, 300), []);
