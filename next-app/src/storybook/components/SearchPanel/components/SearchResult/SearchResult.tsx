@@ -92,17 +92,57 @@ const useTableStyles = makeStyles({
   tableContainer: {},
 });
 
-export default function PokemonTable({ pokemons }) {
-  const classes = useTableStyles();
+export const FIND_NAMES = gql`
+  query FindNames($name: String!, $limit: Int!) {
+    findNames(name: $name, limit: $limit) {
+      id
+      name
+      weight
+      accuracy
+      power
+      generation
+      xp
+      image
+    }
+  }
+`;
 
+import { useSearchKey } from "../../../../../appState/appState";
+import { useLazyQuery, gql } from "@apollo/client";
+
+export default function PokemonTable() {
+  const classes = useTableStyles();
+  const [findNames, { data, loading }] = useLazyQuery(FIND_NAMES);
+  const { searchKey } = useSearchKey();
+
+  const searchNames = (name = "", limit) => {
+    if (name === "") name = " ";
+    findNames({
+      variables: {
+        name: name,
+        limit,
+      },
+    });
+  };
+
+  useEffect(() => {
+    const limit = 20;
+    if (searchKey.trim() === "" || searchKey.trim().length > 1) {
+      searchNames(searchKey, limit);
+    }
+  }, [searchKey]);
+
+  if (loading) return <div>Loading...</div>;
   return (
     <div className={classes.tableContainer}>
       <TableContainer component={Paper} style={{ minHeight: "482px" }}>
         <Table aria-label="collapsible table">
           <TableBody>
-            {pokemons.map((pokemon) => (
-              <Row key={pokemon.name} pokemon={pokemon} />
-            ))}
+            {data &&
+              data.findNames.map((pokemon) => (
+                <Row key={pokemon.name} pokemon={pokemon} />
+              ))}
+            {!data && <Paper style={{ minHeight: "483px" }}></Paper>}
           </TableBody>
         </Table>
       </TableContainer>
