@@ -7,12 +7,6 @@ import DataMocks from "../../_data_mocks/data_mocks";
 import { useSearchKey } from '../../../appState/appState';
 import { useLazyQuery, gql } from "@apollo/client";
 
-const useStyles = makeStyles({
-  seachResult: {
-    padding: "8px",
-  },
-});
-
 export const FIND_NAMES = gql`
   query FindNames($name: String!, $limit: Int!){
     findNames(name: $name, limit: $limit) {
@@ -30,8 +24,10 @@ export const FIND_NAMES = gql`
 
 function SearchPanel() {
   const [findNames, { data, loading }] = useLazyQuery(FIND_NAMES);
-  const handleSearchChange = (searchKey, limit = 20)=> {
-    
+  const { searchKey } = useSearchKey();
+ 
+  useEffect(()=>{
+    const limit = 20;
     if(searchKey.trim() === "") {
       findNames({variables: {
         name: "   ",
@@ -46,13 +42,13 @@ function SearchPanel() {
         limit,
       }});
     }
-  }
+  }, [searchKey])
 
   if(loading) return <div>Loading...</div>
   return (
     <Grid container spacing={1}>
       <Grid item xs={12}>
-        <SearchBox handleSearchChange={handleSearchChange}/>
+        <SearchBox />
       </Grid>
       <Grid item xs={12} >
         {data && 
