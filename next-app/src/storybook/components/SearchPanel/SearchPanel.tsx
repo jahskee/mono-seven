@@ -13,7 +13,6 @@ const useStyles = makeStyles({
   },
 });
 
-const name="ca";
 export const FIND_NAMES = gql`
   query findNames($name: String!){
     findNames(name: $name, limit:10) {
@@ -28,8 +27,6 @@ export const FIND_NAMES = gql`
     }
   }
 `;
-
-
 
 function SearchPanel() {
   const { searchKey, setSearchKey} = useSearchKey();
@@ -53,7 +50,7 @@ function SearchPanel() {
         <SearchBox handleSearchChange={handleSearchChange}/>
       </Grid>
       <Grid item xs={12} >
-        <SearchResult pokemons={DataMocks.pokemons} />
+        <SearchResult pokemons={data.findNames} />
       </Grid>
     </Grid>
   );
