@@ -31,9 +31,18 @@ export const FIND_NAMES = gql`
 function SearchPanel() {
   const [findNames, { data, loading }] = useLazyQuery(FIND_NAMES);
   const handleSearchChange = (searchKey, limit = 20)=> {
-    if(searchKey.length > 1) {
+    
+    if(searchKey.trim() === "") {
       findNames({variables: {
-        name: searchKey,
+        name: "   ",
+        limit,
+      }});
+      return
+    }
+  
+    if(searchKey.trim().length > 1) {
+      findNames({variables: {
+        name: ""?"   ":searchKey,
         limit,
       }});
     }

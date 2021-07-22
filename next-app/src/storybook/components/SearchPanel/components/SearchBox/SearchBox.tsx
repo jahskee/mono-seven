@@ -7,6 +7,7 @@ function SearchBox({handleSearchChange}) {
   const { searchKey, setSearchKey } = useSearchKey();
 
   const handleSearch = (searchKey) => {
+    searchKey = searchKey.trim();
     setSearchKey(searchKey);
     handleSearchChange(searchKey)
   };
