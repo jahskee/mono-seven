@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useRef } from "react";
 import SearchBar from "material-ui-search-bar";
 import { useSearchKey } from "../../../../../appState/appState";
 import debounce from "lodash.debounce";
@@ -12,10 +12,15 @@ function SearchBox({handleSearchChange}) {
   };
 
   const debouncedChangeHandler = useCallback(debounce(handleSearch, 300), []);
+  const searchRef = useRef();
 
   return (
     <div>
-      <SearchBar value={searchKey} onChange={debouncedChangeHandler} />
+      <SearchBar value={searchKey} 
+        onChange={debouncedChangeHandler} 
+        onCancelSearch={()=>{ handleSearch("   ") }}
+        cancelOnEscape={true}
+      />
     </div>
   );
 }
