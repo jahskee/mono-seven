@@ -42,7 +42,7 @@ function SearchPanel() {
   
     if(searchKey.trim().length > 1) {
       findNames({variables: {
-        name: ""?"   ":searchKey,
+        name:searchKey,
         limit,
       }});
     }
