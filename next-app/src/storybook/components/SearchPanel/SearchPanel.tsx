@@ -14,8 +14,8 @@ const useStyles = makeStyles({
 });
 
 export const FIND_NAMES = gql`
-  query FindNames($name: String!){
-    findNames(name: $name, limit:10) {
+  query FindNames($name: String!, $limit: Int!){
+    findNames(name: $name, limit: $limit) {
       id
       name
       weight
