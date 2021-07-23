@@ -4,8 +4,8 @@ import { render, cleanup } from '@testing-library/react';
 import ButtonX from './ButtonX';
 import '@testing-library/jest-dom/extend-expect'
 
+afterEach(cleanup);
 describe('Test the extended material-ui button', () => {
-  afterEach(cleanup);
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<ButtonX />, div);
