@@ -9,6 +9,7 @@ describe('Test the extended material-ui button', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<ButtonX />, div);
+    ReactDOM.unmountComponentAtNode(div);
   });
 
   it('renders button correctly', () => {

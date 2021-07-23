@@ -1,19 +1,13 @@
 import React from "react";
 import { ApolloProvider } from "@apollo/client";
 import T from "prop-types";
-//import { client } from "./apollo-client";
+import { client } from "./apollo-client";
 import "./styles.css";
 
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { useDarkMode } from "../appState/appState";
 import { StylesProvider } from "@material-ui/core/styles";
-import { ApolloClient, InMemoryCache } from "@apollo/client";
-
-export const client = new ApolloClient({
-  uri: "http://localhost:4000/graphql",
-  cache: new InMemoryCache(),
-});
 
 function MyApp({ Component, pageProps }) {
   const { darkMode } = useDarkMode();

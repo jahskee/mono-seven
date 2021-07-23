@@ -14,6 +14,9 @@ import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 import PokeDetail from "../../../PokeDetail/PokeDetail";
 import ImageCell from "../../../ImageCell/ImageCell";
+import Queries from '../../../../_queries/apollo_client_queries';
+import { useSearchKey } from "../../../../../appState/appState";
+import { useLazyQuery } from "@apollo/client";
 
 const useRowStyles = makeStyles({
   root: {
@@ -92,27 +95,10 @@ const useTableStyles = makeStyles({
   tableContainer: {},
 });
 
-export const FIND_NAMES = gql`
-  query FindNames($name: String!, $limit: Int!) {
-    findNames(name: $name, limit: $limit) {
-      id
-      name
-      weight
-      accuracy
-      power
-      generation
-      xp
-      image
-    }
-  }
-`;
-
-import { useSearchKey } from "../../../../../appState/appState";
-import { useLazyQuery, gql } from "@apollo/client";
 
 export default function PokemonTable() {
   const classes = useTableStyles();
-  const [findNames, { data, loading }] = useLazyQuery(FIND_NAMES);
+  const [findNames, { data, loading }] = useLazyQuery(Queries.FIND_NAMES);
   const { searchKey } = useSearchKey();
 
   const searchNames = (name = "", limit) => {
