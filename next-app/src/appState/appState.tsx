@@ -12,20 +12,13 @@ export const usePageInfo = function () {
   return { pageInfo, setPageInfo };
 };
 
-const setPokemonList = makeVar([]);
-export const usePokemonList = () => {
-  const pokemonList = useReactiveVar(setPokemonList);
-  return { pokemonList, setPokemonList };
-};
 
-const setRecordPerPage = makeVar(10);
-export const useRecordPerPage = () => {
-  const recordPerPage = useReactiveVar(setRecordPerPage);
-  return { recordPerPage, setRecordPerPage };
-};
-
+interface UseSearchKey {
+  searchKey: string;
+  setSearchKey: (param: string)=>void
+}
 const setSearchKey = makeVar("");
-export const useSearchKey = () => {
+export const useSearchKey = ():UseSearchKey => {
   const searchKey = useReactiveVar(setSearchKey);
   return { searchKey, setSearchKey };
 };
