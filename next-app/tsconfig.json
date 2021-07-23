@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/pages/apollo-client.js", "src/storybook/mui/Button.spect.s"  ],
+, "src/pages/apollo-client.js", "jest.config.js", "src/storybook/mui/Button.spect.s"  ],
   "exclude": [
     "node_modules"
   ],
