@@ -1,3 +1,10 @@
+interface Pokemon {
+  id: string,
+  name: string,
+  weight: string,
+  accuracy: string,
+}
+
 const pokemons = [
   {
     id: '10',

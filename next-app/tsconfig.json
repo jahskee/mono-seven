@@ -22,8 +22,9 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/pages/apollo-client.js"  ],
+, "src/pages/apollo-client.js", "src/storybook/mui/Button.spect.s"  ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "types": ["/path/to/your/types/folder"] 
 }
