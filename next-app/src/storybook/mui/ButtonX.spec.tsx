@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { render, cleanup } from '@testing-library/react';
-import ButtonX from './Button';
+import ButtonX from './ButtonX';
 import '@testing-library/jest-dom/extend-expect'
 
 describe('Test the extended material-ui button', () => {

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Button } from '@material-ui/core';
+import ButtonX from './ButtonX';
 import { action } from '@storybook/addon-actions';
 
 export default {
-  title: 'Material-UI/Button',
-  component: Button,
+  title: 'Material-UI/ButtonX',
+  component: ButtonX,
   argTypes: {
     color: {
       defaultValue: 'primary',
@@ -28,7 +28,7 @@ export default {
   }
 };
 
-const Template = (args) => (<Button {...args} />);
+const Template = (args) => (<ButtonX {...args} />);
 export const Default = Template.bind({});
 Default.args = {
   color: 'default',
@@ -38,15 +38,15 @@ Default.args = {
 }
 
 export const Primary = () => (
-  <Button color="primary" onClick={action('Primary button clicked')} variant="contained">
+  <ButtonX color="primary" onClick={action('Primary button clicked')} variant="contained">
     Primary
-  </Button>
+  </ButtonX>
 );
 
 export const Secondary = () => (
-  <Button color="secondary" onClick={action('Secondary button clicked')} variant="contained">
+  <ButtonX color="secondary" onClick={action('Secondary button clicked')} variant="contained">
     Secondary
-  </Button>
+  </ButtonX>
 );
 
 
