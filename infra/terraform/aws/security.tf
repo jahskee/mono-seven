@@ -8,8 +8,8 @@ resource "aws_security_group" "lb" {
 
   ingress {
     protocol    = "tcp"
-    from_port   = var.elb_port
-    to_port     = var.elb_port
+    from_port   = var.server_port
+    to_port     = var.server_port
     cidr_blocks = ["0.0.0.0/0"]
   }
 

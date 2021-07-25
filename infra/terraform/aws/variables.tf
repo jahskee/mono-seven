@@ -1,4 +1,8 @@
 # variables.tf
+variable "app_name" {
+  description = "Name of the application"
+  default = "cb"
+}
 
 variable "aws_region" {
   description = "The AWS region things are created in"
@@ -25,7 +29,7 @@ variable "app_port" {
   default     = 3000
 }
 
-variable "elb_port" {
+variable "server_port" {
    description = "Port in ELB accessible to internet"
    default    =  80
 }
@@ -36,7 +40,7 @@ variable "app_count" {
 }
 
 variable "health_check_path" {
-  default = "/"
+  default = "/health"
 }
 
 variable "fargate_cpu" {

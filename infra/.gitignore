@@ -2,6 +2,6 @@
 *.tfstate
 *.tfstate.backup
 .terraform.tfstate.lock.info
-
+terraform/aws/aws_infra
 # Module directory 
 .terraform/
