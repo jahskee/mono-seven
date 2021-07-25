@@ -12,7 +12,7 @@
     "docker-rm-containers": "docker rm -vf $(docker ps -a -q)",
     "docker-rm-images": "docker rmi -f $(docker images -a -q)",
     "docker-push": "yarn init-script && bin/docker-push.sh",
-    "docker-run": "yarn docker-build && docker rm -f nextapp && docker run --name nextapp -p 0.0.0.0:3000:3000 jahskee/nextapp",
+    "docker-run": "yarn docker-build && docker rm -f nextapp && docker run --name nextapp -p 0.0.0.0:80:3000 jahskee/nextapp",
     "lint": "./node_modules/.bin/eslint --fix 'src/**/*.jsx' ",
     "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook",

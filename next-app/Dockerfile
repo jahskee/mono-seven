@@ -16,7 +16,7 @@ RUN npm install
 # add app
 COPY . ./
 
-EXPOSE 3000
+EXPOSE 80
 
 # start app, using exec form, much safer
 CMD ["npm", "start"]

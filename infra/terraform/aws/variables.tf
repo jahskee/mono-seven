@@ -45,13 +45,8 @@ variable "fargate_memory" {
   default = "2048"
 }
 
-variable "container_port" {
+variable "app_port" {
   description = "Port exposed by the docker image to redirect traffict to"
   default = 3000
 }
 
-
-variable "server_port" {
-  description = "Port used by ALB"
-  default = 80
-}
