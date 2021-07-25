@@ -128,7 +128,13 @@ export default function PokemonTable() {
               data.findNames.map((pokemon) => (
                 <Row key={pokemon.name} pokemon={pokemon} />
               ))}
-            {!data && <Paper style={{ minHeight: "483px" }}></Paper>}
+            {!data && (
+              <TableRow>
+                <TableCell>
+                  <Paper style={{ minHeight: "483px" }}></Paper>
+                </TableCell>
+              </TableRow>)
+            }
           </TableBody>
         </Table>
       </TableContainer>
