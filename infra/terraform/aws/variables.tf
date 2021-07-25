@@ -25,10 +25,6 @@ variable "app_image" {
   default = "458831896152.dkr.ecr.us-east-1.amazonaws.com/nextapp:latest"
 }
 
-variable "app_port" {
-  description = "Port exposed by the docker image to redirect traffict to"
-  default = 80
-}
 
 variable "app_count" { 
   description = "Number of docker containers to run"
@@ -47,4 +43,15 @@ variable "fargate_cpu" {
 variable "fargate_memory" {
   description = "Fargate instance memory to provision (in MiB)"
   default = "2048"
+}
+
+variable "container_port" {
+  description = "Port exposed by the docker image to redirect traffict to"
+  default = 3000
+}
+
+
+variable "server_port" {
+  description = "Port used by ALB"
+  default = 80
 }

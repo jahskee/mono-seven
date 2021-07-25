@@ -4,8 +4,8 @@ GitHub: https://github.com/bradford-hamilton/terraform-ecs-fargate/tree/master/t
 
 cd infra/terraform/aws
 
-terraform plan -out "aws_infra"
-terraform apply "aws_infra"
+terraform plan -out aws_infra
+terraform apply aws_infra -auto-approve
 
 
 terraform plan -destroy
