@@ -25,6 +25,11 @@ variable "app_port" {
   default     = 3000
 }
 
+variable "elb_port" {
+   description = "Port in ELB accessible to internet"
+   default    =  80
+}
+
 variable "app_count" {
   description = "Number of docker containers to run"
   default     = 3

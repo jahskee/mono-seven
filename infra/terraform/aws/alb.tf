@@ -9,7 +9,7 @@ resource "aws_alb" "main" {
 
 resource "aws_alb_target_group" "app" {
   name        = "cb-target-group"
-  port        = 80
+  port        = var.elb_port
   protocol    = "HTTP"
   vpc_id      = aws_vpc.main.id
   target_type = "ip"
