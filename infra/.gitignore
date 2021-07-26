@@ -2,6 +2,8 @@
 *.tfstate
 *.tfstate.backup
 .terraform.tfstate.lock.info
-terraform/aws/aws_infra
+terraform/aws-vpcs/web/aws_infra
+terraform/aws-vpcs/web/hashicorp
+terraform/aws-vpcs/web/.terraform.lock.hcl
 # Module directory 
 .terraform/

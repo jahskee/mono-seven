@@ -10,7 +10,7 @@
     "dev:graphql:gateway": "wait-on tcp:4001 && yarn gateway",
     "gateway": "nodemon --inspect -r dotenv/config -r esm -watch 'src/**' --ext 'ts,json' --exec 'ts-node ./src/index.ts'",
     "docker-build": "docker build -t jahskee/graphql .",
-    "docker-run": "yarn docker-build && docker rm -f graphql && docker run --name graphql -p 0.0.0.0:3001:3001 jahskee/graphql",
+    "docker-run": "yarn docker-build && docker rm -f graphql && docker run --name graphql -p 0.0.0.0:80:4000 jahskee/graphql",
     "docker-tag": "docker tag jahskee/graphql 458831896152.dkr.ecr.us-east-1.amazonaws.com/graphql",
     "docker-push": "yarn docker-build && yarn docker-tag && docker push 458831896152.dkr.ecr.us-east-1.amazonaws.com/graphql"
   },

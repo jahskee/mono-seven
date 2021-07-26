@@ -18,4 +18,4 @@ COPY . ./
 EXPOSE 4000
 
 # start app, using exec form, much safer
-CMD ["npm", "run", "dev"]
+CMD ["yarn", "start-prod"]

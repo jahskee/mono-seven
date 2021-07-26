@@ -6,7 +6,7 @@ cd infra/terraform/aws
 
 terraform plan -out aws_infra
 terraform apply aws_infra -auto-approve
-
+terraform apply aws_infra
 
 terraform plan -destroy
 terraform apply -destroy

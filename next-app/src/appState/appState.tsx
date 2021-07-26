@@ -12,12 +12,14 @@ export const usePageInfo = function () {
   return { pageInfo, setPageInfo };
 };
 
+/*
 interface UseSearchKey {
   searchKey: string;
   setSearchKey: (param: string)=>void
 }
+*/
 const setSearchKey = makeVar("");
-export const useSearchKey = ():UseSearchKey => {
+export const useSearchKey = () => {
   const searchKey = useReactiveVar(setSearchKey);
   return { searchKey, setSearchKey };
 };
