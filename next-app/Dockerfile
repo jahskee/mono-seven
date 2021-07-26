@@ -20,4 +20,4 @@ COPY . ./
 EXPOSE 3000
 
 # start app, using exec form, much safer
-CMD ["yarn", "start"]
+CMD ["yarn", "start-prod"]
