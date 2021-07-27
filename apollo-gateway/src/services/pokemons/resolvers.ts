@@ -42,6 +42,7 @@ const resolvers = {
       return pokemons.slice(0, limit);
     },
   },
+  getPokemonDetail,
 };
 
 function getId(url: string) {
@@ -49,7 +50,7 @@ function getId(url: string) {
   return result[result.length - 2];
 }
 
-async function getPokemonDetail({ name, url }: any): Promise<any> {
+export async function getPokemonDetail({ name, url }: any): Promise<any> {
   const id = getId(url);
   const redisClient = getRedisClient();
   let pokemon = await redisClient.getAsync(name);
