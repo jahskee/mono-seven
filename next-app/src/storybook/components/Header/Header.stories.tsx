@@ -1,7 +1,7 @@
 import Header from "./Header";
 
 export default {
-  title: "Corpo/Components/Header",
+  title: "7-Eleven/Components/Header",
   component: Header,
 };
 

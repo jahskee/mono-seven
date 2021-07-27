@@ -12,7 +12,8 @@
     "docker-build": "docker build -t jahskee/graphql .",
     "docker-run": "yarn docker-build && docker rm -f graphql && docker run --name graphql -p 0.0.0.0:80:4000 jahskee/graphql",
     "docker-tag": "docker tag jahskee/graphql 458831896152.dkr.ecr.us-east-1.amazonaws.com/graphql",
-    "docker-push": "yarn docker-build && yarn docker-tag && docker push 458831896152.dkr.ecr.us-east-1.amazonaws.com/graphql"
+    "docker-push": "yarn docker-build && yarn docker-tag && docker push 458831896152.dkr.ecr.us-east-1.amazonaws.com/graphql",
+    "test": "jest --verbose"
   },
   "author": "",
   "license": "ISC",
@@ -33,15 +34,20 @@
     "wait-on": "^5.3.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-typescript": "^7.14.5",
     "@testing-library/jest-native": "3.4.3",
     "@types/jest": "26.0.23",
     "@types/node": "^15.14.0",
     "@typescript-eslint/eslint-plugin": "4.22.0",
     "@typescript-eslint/parser": "4.22.0",
     "babel-eslint": "10.1.0",
+    "babel-jest": "^27.0.6",
     "concurrently": "^5.3.0",
     "danger": "10.6.4",
     "eslint": "7.25.0",
+    "jest": "^27.0.6",
     "nodemon": "^1.19.4",
     "ts-node": "^10.0.0",
     "typescript": "4.2.4"

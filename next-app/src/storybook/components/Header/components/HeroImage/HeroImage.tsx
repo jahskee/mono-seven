@@ -26,7 +26,7 @@ function HeroImage() {
   return (
     <div className={classes.heroImage} style={{ padding: 0 }}>
       <img
-        src="/images/7eleven.png"
+        src="https://i.imgur.com/fyiDwMC.png"
         className={classes.logo}
         alt="7eleveln logo"
       />
