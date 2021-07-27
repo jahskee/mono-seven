@@ -13,4 +13,10 @@ module.exports = {
     "storybook-dark-mode",
     "storybook-addon-apollo-client",
   ],
+  babel: async (options) => ({
+    ...options,
+    babelrc: false,
+    configFile: false,
+    // any extra options you want to set
+  }),
 };

@@ -6,20 +6,29 @@ export const useDarkMode = () => {
   return { darkMode, setDarkMode };
 };
 
+interface PageInfo {
+  selectedPage?: number;
+  limit?: number;
+  pageCount?: number;
+}
+interface UsePageInfo {
+  pageInfo: PageInfo;
+  setPageInfo: (pageInfo: PageInfo) => void;
+}
+
 const setPageInfo = makeVar({ selectedPage: 1, limit: 10, pageCount: 34 });
-export const usePageInfo = function () {
+export const usePageInfo = (): UsePageInfo => {
   const pageInfo = useReactiveVar(setPageInfo);
   return { pageInfo, setPageInfo };
 };
 
-/*
 interface UseSearchKey {
   searchKey: string;
   setSearchKey: (param: string)=>void
 }
-*/
+
 const setSearchKey = makeVar("");
-export const useSearchKey = () => {
+export const useSearchKey = (): UseSearchKey => {
   const searchKey = useReactiveVar(setSearchKey);
   return { searchKey, setSearchKey };
 };
