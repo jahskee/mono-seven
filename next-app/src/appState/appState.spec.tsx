@@ -1,9 +1,13 @@
 
 import React, { useEffect } from 'react';
 import { usePageInfo } from './appState';
-import {render, fireEvent, waitFor, within, screen } from '@testing-library/react'
+import {render, fireEvent, waitFor, within, screen, cleanup } from '@testing-library/react'
 import '@testing-library/jest-dom'
 
+afterEach(()=>{
+  cleanup();
+  jest.resetAllMocks();
+});
 describe("usePageHook with pageInfo and setPageInfo value.", ()=>{
   const Test = ({selectedPage, limit, pageCount}) => {
     const { pageInfo, setPageInfo } = usePageInfo()

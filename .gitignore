@@ -103,3 +103,5 @@ dist
 # TernJS port file
 .tern-port
 infra/terraform/aws/aws_infra
+infra/terraform/aws/web/.terraform.lock.hcl
+infra/terraform/aws/web/aws_file

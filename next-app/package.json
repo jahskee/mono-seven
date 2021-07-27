@@ -16,7 +16,7 @@
     "lint": "./node_modules/.bin/eslint --fix 'src/**/*.jsx' ",
     "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook",
-    "test": "jest"
+    "test": "jest --verbose"
   },
   "dependencies": {
     "@apollo/client": "^3.3.21",
