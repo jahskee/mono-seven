@@ -11,8 +11,10 @@ ENV PATH /app/node_modules/.bin:$PATH
 # install app dependencies
 COPY package.json ./
 COPY package-lock.json ./
-# RUN npm install yarn --global
-RUN yarn
+
+RUN npm install
+#RUN npm install yarn --global
+#RUN yarn
 
 # add app
 COPY . ./
@@ -20,4 +22,4 @@ COPY . ./
 EXPOSE 3000
 
 # start app, using exec form, much safer
-CMD ["yarn", "start-prod"]
+CMD ["npm", "run", "start-prod"]

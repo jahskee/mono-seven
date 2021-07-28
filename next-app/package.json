@@ -11,6 +11,7 @@
     "docker-build": "next build && docker build -t jahskee/nextapp .",
     "docker-rm-containers": "docker rm -vf $(docker ps -a -q)",
     "docker-rm-images": "docker rmi -f $(docker images -a -q)",
+    "docker-prune": "docker system prune",
     "docker-push": "yarn docker-build && yarn init-script && bin/docker-push.sh",
     "docker-run": "yarn docker-build && docker rm -f nextapp && docker run --name nextapp -p 0.0.0.0:3000:3000 jahskee/nextapp",
     "lint": "./node_modules/.bin/eslint --fix 'src/**/*.jsx' ",
