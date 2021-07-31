@@ -5,6 +5,9 @@
     },
     {
       "path": "rn_app"
+    },
+    {
+      "path": "next-app"
     }
   ],
   "settings": {}
