@@ -1,0 +1,12 @@
+{
+  "auths": {
+          "https://index.docker.io/v1/": {}
+  },
+  "credHelpers": {
+    "458831896152.dkr.ecr.us-east-1.amazonaws.com": "ecr-login"
+  },
+  "credsStore": "pass",
+  "experimental": "disabled",
+  "stackOrchestrator": "swarm",
+  "currentContext": "desktop-linux"
+}
