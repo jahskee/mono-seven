@@ -2,12 +2,6 @@ import * as pulumi from "@pulumi/pulumi";
 import * as awsx from "@pulumi/awsx";
 import * as aws from "@pulumi/aws";
 
-// const cluster = new awsx.ecs.Cluster("nextapp");
-
-// Create a repository.
-//const repo = new awsx.ecr.Repository("nextapp2");
-//export const image = repo.buildAndPushImage("../../../next-app");
-
 const vpc = new awsx.ec2.Vpc("custom", {subnets: [{ type: "public" }, { type: "private" }] { cidrBlock: "172.8.8.0/16"}});
 export const vpcId = vpc.id;
 export const vpcPrivateSubnetIds = vpc.privateSubnetIds;
