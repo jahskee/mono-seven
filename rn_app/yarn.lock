@@ -4246,6 +4246,11 @@ kleur@^3.0.3:
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
   integrity sha512-eTIzlVOSUR+JxdDFepEYcBMtZ9Qqdef+rnzWdRZuMbOywu5tO2w2N7rqjoANZ5k9vywhL6Br1VRjUIgTQx4E8w==
 
+launchdarkly-react-native-client-sdk@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/launchdarkly-react-native-client-sdk/-/launchdarkly-react-native-client-sdk-4.2.2.tgz#d99832ff488f23714a3a8decc61905b8716140e1"
+  integrity sha512-S0VKJr+mgEXu4oYFUnnDB3b17c3fTFvzXOBNNkHWmT6Fmi/SpKbTGZxaHhjlTa46eqWt7OCXCpqqOHTn3rDPyA==
+
 leven@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/leven/-/leven-3.1.0.tgz#77891de834064cccba82ae7842bb6b14a13ed7f2"

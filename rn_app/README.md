@@ -4,5 +4,6 @@
   ```npx react-native start```
 
 ## 2. Start the React Native Emulators
-  ```npx react-native run-ios```
-  ```npx react-native run-android```
+  ```npx react-native run-ios
+     npx react-native run-android
+  ```
