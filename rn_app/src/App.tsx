@@ -8,6 +8,7 @@
  * @format
  */
 import 'react-native-gesture-handler';
+import LDClient from 'launchdarkly-react-native-client-sdk';
 
 import React from 'react';
 import { SafeAreaView, ScrollView, StatusBar, Text, StyleSheet, useColorScheme, View } from 'react-native';
@@ -30,7 +31,7 @@ const App = () => {
       <NavigationContainer>
         <ScrollView style={styles.scroll} contentInsetAdjustmentBehavior="automatic">
           <Header />
-          <Text> Testing 11 </Text>
+          <Text> Testing 1132 </Text>
           <View />
         </ScrollView>
       </NavigationContainer>
