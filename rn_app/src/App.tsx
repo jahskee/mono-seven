@@ -1,12 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
 import 'react-native-gesture-handler';
 import LDClient from 'launchdarkly-react-native-client-sdk';
 
@@ -19,8 +10,17 @@ import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
+  let client = new LDClient();
+  let config = {
+    mobileKey: 'mob-2bf3346d-291b-4143-b1e4-98cf266d5f501',
+  };
+  let user = { key: 'fake@example.com' };
+  client.configure(config, user).then(
+    (success) => console.log('launchdarkly loaded .' + success),
+    (error) => console.log(error)
+  );
 
+  const isDarkMode = useColorScheme() === 'dark';
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
@@ -31,7 +31,7 @@ const App = () => {
       <NavigationContainer>
         <ScrollView style={styles.scroll} contentInsetAdjustmentBehavior="automatic">
           <Header />
-          <Text> Testing 1132 </Text>
+          <Text> Testing 2 </Text>
           <View />
         </ScrollView>
       </NavigationContainer>
