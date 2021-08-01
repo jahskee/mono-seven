@@ -1,46 +1,37 @@
-import 'react-native-gesture-handler';
-import LDClient from 'launchdarkly-react-native-client-sdk';
-
-import React from 'react';
-import { SafeAreaView, ScrollView, StatusBar, Text, StyleSheet, useColorScheme, View } from 'react-native';
-
-import { Colors, Header } from 'react-native/Libraries/NewAppScreen';
-import 'react-native-gesture-handler';
-
+import * as React from 'react';
+import { View, Text, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const App = () => {
-  let client = new LDClient();
-  let config = {
-    mobileKey: 'mob-2bf3346d-291b-4143-b1e4-98cf266d5f501',
-  };
-  let user = { key: 'fake@example.com' };
-  client.configure(config, user).then(
-    (success) => console.log('launchdarkly loaded .' + success),
-    (error) => console.log(error)
-  );
-
-  const isDarkMode = useColorScheme() === 'dark';
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
+function HomeScreen({ navigation }) {
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NavigationContainer>
-        <ScrollView style={styles.scroll} contentInsetAdjustmentBehavior="automatic">
-          <Header />
-          <Text> Testing 2 </Text>
-          <View />
-        </ScrollView>
-      </NavigationContainer>
-    </SafeAreaView>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Home Screen</Text>
+      <Button title="Go To Details" onPress={() => navigation.navigate('Details')} />
+    </View>
   );
-};
+}
 
-const styles = StyleSheet.create({
-  scroll: {},
-});
+function DetailsScreen({ navigation }) {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Details Screen</Text>
+      <Button title="Go To Details Again..." onPress={() => navigation.push('Details')} />
+    </View>
+  );
+}
+
+const Stack = createStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Overview' }} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
 export default App;
