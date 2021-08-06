@@ -1,5 +1,10 @@
 # React Native Common commands
 
+## install packages
+  ```
+    npm install
+  ```
+  
 ## 1. Start the Metro Server
   ```
   npx react-native start
