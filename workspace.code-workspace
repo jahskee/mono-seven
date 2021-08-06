@@ -8,6 +8,9 @@
     },
     {
       "path": "next-app"
+    },
+    {
+      "path": "infra"
     }
   ],
   "settings": {}
