@@ -3,7 +3,7 @@ import Header from '../../common/Header';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from './01_HomeScreen';
-import DetailScreen from './02_DetailScreen';
+import DetailScreen from './02_HomeDetailScreen';
 
 const Stack = createStackNavigator();
 

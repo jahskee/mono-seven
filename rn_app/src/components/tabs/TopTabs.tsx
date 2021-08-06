@@ -1,5 +1,5 @@
 import React from 'react';
-import HomeStackNavigator from './home_stack/HomeStackNavigator';
+import HomeStackNavigator from '../stacks/home/00_HomeStackNavigator';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
 const Tab = createMaterialBottomTabNavigator();

@@ -1,5 +1,6 @@
 import React from 'react';
-import HomeStackNavigator from './home_stack/00_HomeStackNavigator';
+import HomeStackNavigator from '../stacks/home/00_HomeStackNavigator';
+import SettingStackNavigator from '../stacks/settings/00_SettingsStackNavigator';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
 const Tab = createMaterialBottomTabNavigator();
@@ -17,7 +18,7 @@ function BottomTabs() {
       />
       <Tab.Screen
         name="Settings"
-        component={HomeStackNavigator}
+        component={SettingStackNavigator}
         options={{
           tabBarLabel: 'Settings',
           //tabBarIcon: () => <Text>Home</Text>,
