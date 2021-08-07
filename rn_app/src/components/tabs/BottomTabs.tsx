@@ -8,22 +8,8 @@ const Tab = createMaterialBottomTabNavigator();
 function BottomTabs() {
   return (
     <Tab.Navigator>
-      <Tab.Screen
-        name="Home"
-        component={HomeStackNavigator}
-        options={{
-          tabBarLabel: 'Home',
-          //tabBarIcon: () => <Text>Home</Text>,
-        }}
-      />
-      <Tab.Screen
-        name="Settings"
-        component={SettingStackNavigator}
-        options={{
-          tabBarLabel: 'Settings',
-          //tabBarIcon: () => <Text>Home</Text>,
-        }}
-      />
+      <Tab.Screen name="Home" component={HomeStackNavigator} />
+      <Tab.Screen name="Settings" component={SettingStackNavigator} />
     </Tab.Navigator>
   );
 }
