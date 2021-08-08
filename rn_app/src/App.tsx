@@ -7,7 +7,6 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 import DrawerNavigator from './components/drawer/DrawerNavigation';
-
 function App() {
   return (
     <ApolloProvider client={client}>
