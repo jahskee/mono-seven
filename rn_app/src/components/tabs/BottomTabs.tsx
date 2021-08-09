@@ -2,6 +2,7 @@ import React from 'react';
 import HomeStackNavigator from '../stacks/home/00_HomeStackNavigator';
 import SettingStackNavigator from '../stacks/settings/00_SettingsStackNavigator';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -13,7 +14,7 @@ function BottomTabs() {
         component={HomeStackNavigator}
         options={{
           tabBarLabel: 'Home',
-          //tabBarIcon: () => <Text>Home</Text>,
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="home" color={color} size={26} />,
         }}
       />
       <Tab.Screen
